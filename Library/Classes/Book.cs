@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Classes
 {
-    internal class Book
+    internal abstract class Book 
     {
         private string ISBN { get; set; }
         private string title { get; set; }
@@ -14,9 +14,6 @@ namespace Library.Classes
         private string publisher { get; set; }
         private string publication_data { get; set; }
         private int number_of_pages { get; set; }
-        private string publisher { get; set; }
-
-
-
+        private string language { get; set; }
     }
 }

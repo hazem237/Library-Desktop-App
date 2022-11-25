@@ -8,20 +8,20 @@ namespace Library.Classes
 {
     internal class AccountState
     {
-       
-            public bool Active { get; private set; }
 
-        public bool Frozen { get; private set; }
-        public bool Frozen { get; private set; }
+        public enum State_type { 
+            Active  = 0,
+            Frozem = 1,
+            Closed= 2
+        }
 
+         /*protected AccountState (bool Active, string name) => (Id, Name) = (id, name);
 
-        protected AccountState (int id, string name) => (Id, Name) = (id, name);
+            public override string ToString() => state;
 
-            public override string ToString() => Name;
+            public int CompareTo(object other) => Id.CompareTo(((AccountState)other).state);
 
-            public int CompareTo(object other) => Id.CompareTo(((AccountState)other).Id);
-
-            // Other utility methods ...
+            // Other utility methods ... */
         
     }
 }

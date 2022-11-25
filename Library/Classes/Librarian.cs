@@ -8,5 +8,8 @@ namespace Library.Classes
 {
     internal class Librarian
     {
+        private string name { get; set; }
+        private string address { get; set; }
+        private string position { get; set; }
     }
 }

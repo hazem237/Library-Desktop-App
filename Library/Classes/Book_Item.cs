@@ -6,7 +6,15 @@ using System.Threading.Tasks;
 
 namespace Library.Classes
 {
-    internal class Book_Item
+    internal class Book_Item : Book
     {
+        private string barCode { get; set; }
+        private int tag { get; set; }
+
+        public bool isReferenceOnly ()
+        {
+            /* To Be structuring */
+            return true;
+        }
     }
 }

@@ -8,5 +8,8 @@ namespace Library.Classes
 {
     internal class Author
     {
+        private string name { get; set; }
+        private string biography { get; set; }
+
     }
 }
