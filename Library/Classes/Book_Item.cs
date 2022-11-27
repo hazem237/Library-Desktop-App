@@ -11,10 +11,6 @@ namespace Library.Classes
         private string barCode { get; set; }
         private int tag { get; set; }
 
-        public bool isReferenceOnly ()
-        {
-            /* To Be structuring */
-            return true;
-        }
+        private bool isReferenceOnly { get; set; }  
     }
 }

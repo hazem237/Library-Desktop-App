@@ -15,5 +15,7 @@ namespace Library.Classes
         private string publication_data { get; set; }
         private int number_of_pages { get; set; }
         private string language { get; set; }
+
+
     }
 }
