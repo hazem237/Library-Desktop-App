@@ -13,5 +13,7 @@ namespace Library.Classes
         private string History { get; set; }
         private Date opened { get; set; }
         private AccountState state { get; set;}
+
+        public Library Library { get; set; }
     }
 }

@@ -8,7 +8,7 @@ namespace Library.Classes
 {
     internal class Patron
     {
-        private string name { get; set; }
+        public string name { get; set; }
         private string address { get; set; }
     }
 }

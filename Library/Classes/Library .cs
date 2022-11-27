@@ -11,5 +11,7 @@ namespace Library.Classes
         private string name { get; set; }
         private string address { get; set; }
 
+        public List <Account> accounts { get; set; }
+
     }
 }

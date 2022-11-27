@@ -7,8 +7,8 @@ using Library.Interfaces;
 
 namespace Library.Classes
 {
-    public class Catalog : Search , Manage
-    {
-
+    public class Catalog { 
+        public int  CatalogID { get; set; }
+        public List <Book_Item> Book_Items { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Classes
 {
-    internal abstract class Book 
+    public abstract class Book 
     {
         private string ISBN { get; set; }
         private string title { get; set; }
