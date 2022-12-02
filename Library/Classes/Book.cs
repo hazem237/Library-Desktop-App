@@ -8,14 +8,19 @@ namespace Library.Classes
 {
     public abstract class Book 
     {
-        private string ISBN { get; set; }
-        private string title { get; set; }
-        private string summary { get; set; }
-        private string publisher { get; set; }
-        private string publication_data { get; set; }
-        private int number_of_pages { get; set; }
-        private string language { get; set; }
+        public Book()
+        {
+            this.Authors = new HashSet<Author>();
+        }
+        public string ISBN { get; set; }
+        public string Title { get; set; }
+        public string Summary { get; set; }
+        public string Publisher { get; set; }
+        public string Publication_data { get; set; }
+        public int Number_of_pages { get; set; }
+        public string Language { get; set; }
 
+        public virtual ICollection<Author> Authors { get; set; }
 
     }
 }

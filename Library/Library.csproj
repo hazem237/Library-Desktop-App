@@ -171,6 +171,7 @@
     <Compile Include="Classes\Date.cs" />
     <Compile Include="Classes\Librarian.cs" />
     <Compile Include="Classes\Library .cs" />
+    <Compile Include="Classes\LibraryContext.cs" />
     <Compile Include="Classes\Patron.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
