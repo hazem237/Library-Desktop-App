@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Library.Classes
 {
-    public class Book_Item : Book
+    public class Book_Item:Book
     {
-        private string barCode { get; set; }
-        private int tag { get; set; }
+        public string BarCode { get; set; }
+        public int Tag { get; set; }
 
-        private bool isReferenceOnly { get; set; }  
+        public bool IsReferenceOnly { get; set; }  
 
         public Catalog Catalog { get; set; }
     }

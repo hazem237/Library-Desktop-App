@@ -10,13 +10,11 @@ namespace Library.Classes
     public class LibraryContext : DbContext
     {
         public DbSet<Book> Books { get; set; }
-        public DbSet<Author> Authors { get; set; }
+       public DbSet<Author> Authors { get; set; }
         public DbSet<BookAuthor> BookAuthors { get; set; }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-9VUPGQP;Database=LibraryContext;Trusted_Co
-nnection=True;");
-        }
+        public DbSet<Book_Item> BookItems { get; set; }
+        public DbSet<Catalog> Catalogs { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<BookAuthor>()
@@ -30,5 +28,10 @@ nnection=True;");
                 .WithMany(c => c.BookAuthors)
                 .HasForeignKey(bc => bc.Author_Id);
         }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-9VUPGQP;Database=LibraryDB; Integrated Security=True;");
+        }
+        
     }
 }

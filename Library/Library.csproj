@@ -182,6 +182,11 @@
     </Compile>
     <Compile Include="Interfaces\Manage.cs" />
     <Compile Include="Interfaces\Search.cs" />
+    <Compile Include="Migrations\20221202080836_LibraryDB.cs" />
+    <Compile Include="Migrations\20221202080836_LibraryDB.designer.cs">
+      <DependentUpon>20221202080836_LibraryDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\LibraryContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
