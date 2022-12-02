@@ -19,6 +19,29 @@ namespace Library.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Library.Classes.Account", b =>
+                {
+                    b.Property<int>("Account_number")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Date_opened")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("History")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("Library_ID")
+                        .HasColumnType("int");
+
+                    b.HasKey("Account_number");
+
+                    b.HasIndex("Library_ID");
+
+                    b.ToTable("Accounts");
+                });
+
             modelBuilder.Entity("Library.Classes.Author", b =>
                 {
                     b.Property<int>("Author_ID")
@@ -100,6 +123,24 @@ namespace Library.Migrations
                     b.ToTable("Catalogs");
                 });
 
+            modelBuilder.Entity("Library.Classes.Library", b =>
+                {
+                    b.Property<int>("Library_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Library_ID");
+
+                    b.ToTable("Libraries");
+                });
+
             modelBuilder.Entity("Library.Classes.Book_Item", b =>
                 {
                     b.HasBaseType("Library.Classes.Book");
@@ -113,12 +154,24 @@ namespace Library.Migrations
                     b.Property<bool>("IsReferenceOnly")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("Library_ID")
+                        .HasColumnType("int");
+
                     b.Property<int>("Tag")
                         .HasColumnType("int");
 
                     b.HasIndex("CatalogID");
 
+                    b.HasIndex("Library_ID");
+
                     b.HasDiscriminator().HasValue("Book_Item");
+                });
+
+            modelBuilder.Entity("Library.Classes.Account", b =>
+                {
+                    b.HasOne("Library.Classes.Library", "Library")
+                        .WithMany("Accounts")
+                        .HasForeignKey("Library_ID");
                 });
 
             modelBuilder.Entity("Library.Classes.BookAuthor", b =>
@@ -141,6 +194,10 @@ namespace Library.Migrations
                     b.HasOne("Library.Classes.Catalog", "Catalog")
                         .WithMany("Book_Items")
                         .HasForeignKey("CatalogID");
+
+                    b.HasOne("Library.Classes.Library", "Library")
+                        .WithMany("Book_Items")
+                        .HasForeignKey("Library_ID");
                 });
 #pragma warning restore 612, 618
         }

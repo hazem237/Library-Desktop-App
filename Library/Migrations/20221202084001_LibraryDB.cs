@@ -33,6 +33,41 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Libraries",
+                columns: table => new
+                {
+                    Library_ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Libraries", x => x.Library_ID);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Accounts",
+                columns: table => new
+                {
+                    Account_number = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    History = table.Column<string>(nullable: true),
+                    Date_opened = table.Column<string>(nullable: true),
+                    Library_ID = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Accounts", x => x.Account_number);
+                    table.ForeignKey(
+                        name: "FK_Accounts_Libraries_Library_ID",
+                        column: x => x.Library_ID,
+                        principalTable: "Libraries",
+                        principalColumn: "Library_ID",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Books",
                 columns: table => new
                 {
@@ -48,7 +83,8 @@ namespace Library.Migrations
                     BarCode = table.Column<string>(nullable: true),
                     Tag = table.Column<int>(nullable: true),
                     IsReferenceOnly = table.Column<bool>(nullable: true),
-                    CatalogID = table.Column<int>(nullable: true)
+                    CatalogID = table.Column<int>(nullable: true),
+                    Library_ID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -58,6 +94,12 @@ namespace Library.Migrations
                         column: x => x.CatalogID,
                         principalTable: "Catalogs",
                         principalColumn: "CatalogID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Books_Libraries_Library_ID",
+                        column: x => x.Library_ID,
+                        principalTable: "Libraries",
+                        principalColumn: "Library_ID",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -86,6 +128,11 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Accounts_Library_ID",
+                table: "Accounts",
+                column: "Library_ID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_BookAuthors_Author_Id",
                 table: "BookAuthors",
                 column: "Author_Id");
@@ -94,10 +141,18 @@ namespace Library.Migrations
                 name: "IX_Books_CatalogID",
                 table: "Books",
                 column: "CatalogID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Books_Library_ID",
+                table: "Books",
+                column: "Library_ID");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Accounts");
+
             migrationBuilder.DropTable(
                 name: "BookAuthors");
 
@@ -109,6 +164,9 @@ namespace Library.Migrations
 
             migrationBuilder.DropTable(
                 name: "Catalogs");
+
+            migrationBuilder.DropTable(
+                name: "Libraries");
         }
     }
 }

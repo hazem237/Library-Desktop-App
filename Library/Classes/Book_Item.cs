@@ -14,5 +14,6 @@ namespace Library.Classes
         public bool IsReferenceOnly { get; set; }  
 
         public Catalog Catalog { get; set; }
+        public Library Library { get; set; }
     }
 }

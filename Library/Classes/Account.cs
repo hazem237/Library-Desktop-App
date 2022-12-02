@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -7,12 +8,13 @@ using System.Threading.Tasks;
 namespace Library.Classes
 {
  
-    internal class Account
+    public class Account
     {
-        private int Account_number { get; set; }
-        private string History { get; set; }
-        private Date opened { get; set; }
-        private AccountState state { get; set;}
+        [Key]
+        public int Account_number { get; set; }
+        public string History { get; set; }
+        public string Date_opened { get; set; }
+       // public AccountState state { get; set;}
 
         public Library Library { get; set; }
     }

@@ -169,7 +169,6 @@
     <Compile Include="Classes\BookAuthor.cs" />
     <Compile Include="Classes\Book_Item.cs" />
     <Compile Include="Classes\Catalog.cs" />
-    <Compile Include="Classes\Date.cs" />
     <Compile Include="Classes\Librarian.cs" />
     <Compile Include="Classes\Library .cs" />
     <Compile Include="Classes\LibraryContext.cs" />
@@ -182,9 +181,9 @@
     </Compile>
     <Compile Include="Interfaces\Manage.cs" />
     <Compile Include="Interfaces\Search.cs" />
-    <Compile Include="Migrations\20221202080836_LibraryDB.cs" />
-    <Compile Include="Migrations\20221202080836_LibraryDB.designer.cs">
-      <DependentUpon>20221202080836_LibraryDB.cs</DependentUpon>
+    <Compile Include="Migrations\20221202084001_LibraryDB.cs" />
+    <Compile Include="Migrations\20221202084001_LibraryDB.designer.cs">
+      <DependentUpon>20221202084001_LibraryDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\LibraryContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
