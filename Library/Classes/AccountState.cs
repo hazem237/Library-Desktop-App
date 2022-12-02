@@ -14,14 +14,6 @@ namespace Library.Classes
             Frozem = 1,
             Closed= 2
         }
-
-         /*protected AccountState (bool Active, string name) => (Id, Name) = (id, name);
-
-            public override string ToString() => state;
-
-            public int CompareTo(object other) => Id.CompareTo(((AccountState)other).state);
-
-            // Other utility methods ... */
         
     }
 }

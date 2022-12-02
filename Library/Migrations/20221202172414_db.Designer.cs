@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20221202084001_LibraryDB")]
-    partial class LibraryDB
+    [Migration("20221202172414_db")]
+    partial class db
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -143,6 +143,27 @@ namespace Library.Migrations
                     b.ToTable("Libraries");
                 });
 
+            modelBuilder.Entity("Library.Classes.Patron", b =>
+                {
+                    b.Property<int>("Patron_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Account_number")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Patron_ID");
+
+                    b.HasIndex("Account_number")
+                        .IsUnique();
+
+                    b.ToTable("Patron");
+                });
+
             modelBuilder.Entity("Library.Classes.Book_Item", b =>
                 {
                     b.HasBaseType("Library.Classes.Book");
@@ -187,6 +208,15 @@ namespace Library.Migrations
                     b.HasOne("Library.Classes.Book", "Book")
                         .WithMany("BookAuthors")
                         .HasForeignKey("ISBN")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Library.Classes.Patron", b =>
+                {
+                    b.HasOne("Library.Classes.Account", "Account")
+                        .WithOne("Patron")
+                        .HasForeignKey("Library.Classes.Patron", "Account_number")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

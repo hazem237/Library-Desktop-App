@@ -2,7 +2,7 @@
 
 namespace Library.Migrations
 {
-    public partial class LibraryDB : Migration
+    public partial class db : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -104,6 +104,26 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Patron",
+                columns: table => new
+                {
+                    Patron_ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    Account_number = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Patron", x => x.Patron_ID);
+                    table.ForeignKey(
+                        name: "FK_Patron_Accounts_Account_number",
+                        column: x => x.Account_number,
+                        principalTable: "Accounts",
+                        principalColumn: "Account_number",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "BookAuthors",
                 columns: table => new
                 {
@@ -146,21 +166,30 @@ namespace Library.Migrations
                 name: "IX_Books_Library_ID",
                 table: "Books",
                 column: "Library_ID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Patron_Account_number",
+                table: "Patron",
+                column: "Account_number",
+                unique: true);
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Accounts");
+                name: "BookAuthors");
 
             migrationBuilder.DropTable(
-                name: "BookAuthors");
+                name: "Patron");
 
             migrationBuilder.DropTable(
                 name: "Authors");
 
             migrationBuilder.DropTable(
                 name: "Books");
+
+            migrationBuilder.DropTable(
+                name: "Accounts");
 
             migrationBuilder.DropTable(
                 name: "Catalogs");

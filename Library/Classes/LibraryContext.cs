@@ -16,6 +16,7 @@ namespace Library.Classes
         public DbSet<Catalog> Catalogs { get; set; }
         public DbSet<Library> Libraries { get; set; }
         public DbSet <Account> Accounts { get; set; }
+      //  public DbSet <Patron> Patrons { get; set;  }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +30,12 @@ namespace Library.Classes
                 .HasOne(bc => bc.Author)
                 .WithMany(c => c.BookAuthors)
                 .HasForeignKey(bc => bc.Author_Id);
+
+            modelBuilder.Entity<Account>()
+            .HasOne(a => a.Patron)
+            .WithOne(a => a.Account)
+            .HasForeignKey<Patron>(c => c.Account_number);
+
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

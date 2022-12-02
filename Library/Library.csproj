@@ -181,9 +181,9 @@
     </Compile>
     <Compile Include="Interfaces\Manage.cs" />
     <Compile Include="Interfaces\Search.cs" />
-    <Compile Include="Migrations\20221202084001_LibraryDB.cs" />
-    <Compile Include="Migrations\20221202084001_LibraryDB.designer.cs">
-      <DependentUpon>20221202084001_LibraryDB.cs</DependentUpon>
+    <Compile Include="Migrations\20221202172414_db.cs" />
+    <Compile Include="Migrations\20221202172414_db.designer.cs">
+      <DependentUpon>20221202172414_db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\LibraryContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />

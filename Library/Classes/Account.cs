@@ -17,5 +17,7 @@ namespace Library.Classes
        // public AccountState state { get; set;}
 
         public Library Library { get; set; }
+
+        public Patron Patron { get; set; }
     }
 }
