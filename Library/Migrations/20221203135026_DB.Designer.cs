@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20221202172414_db")]
-    partial class db
+    [Migration("20221203135026_DB")]
+    partial class DB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -59,7 +59,7 @@ namespace Library.Migrations
 
                     b.HasKey("Author_ID");
 
-                    b.ToTable("Authors");
+                    b.ToTable("Author");
                 });
 
             modelBuilder.Entity("Library.Classes.Book", b =>
@@ -93,7 +93,7 @@ namespace Library.Migrations
 
                     b.HasKey("ISBN");
 
-                    b.ToTable("Books");
+                    b.ToTable("Book");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Book");
                 });
@@ -110,7 +110,7 @@ namespace Library.Migrations
 
                     b.HasIndex("Author_Id");
 
-                    b.ToTable("BookAuthors");
+                    b.ToTable("BookAuthor");
                 });
 
             modelBuilder.Entity("Library.Classes.Catalog", b =>

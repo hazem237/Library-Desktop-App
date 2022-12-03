@@ -2,12 +2,12 @@
 
 namespace Library.Migrations
 {
-    public partial class db : Migration
+    public partial class DB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Authors",
+                name: "Author",
                 columns: table => new
                 {
                     Author_ID = table.Column<int>(nullable: false)
@@ -17,7 +17,7 @@ namespace Library.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Authors", x => x.Author_ID);
+                    table.PrimaryKey("PK_Author", x => x.Author_ID);
                 });
 
             migrationBuilder.CreateTable(
@@ -68,7 +68,7 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Books",
+                name: "Book",
                 columns: table => new
                 {
                     ISBN = table.Column<int>(nullable: false)
@@ -88,15 +88,15 @@ namespace Library.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Books", x => x.ISBN);
+                    table.PrimaryKey("PK_Book", x => x.ISBN);
                     table.ForeignKey(
-                        name: "FK_Books_Catalogs_CatalogID",
+                        name: "FK_Book_Catalogs_CatalogID",
                         column: x => x.CatalogID,
                         principalTable: "Catalogs",
                         principalColumn: "CatalogID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Books_Libraries_Library_ID",
+                        name: "FK_Book_Libraries_Library_ID",
                         column: x => x.Library_ID,
                         principalTable: "Libraries",
                         principalColumn: "Library_ID",
@@ -124,7 +124,7 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "BookAuthors",
+                name: "BookAuthor",
                 columns: table => new
                 {
                     ISBN = table.Column<int>(nullable: false),
@@ -132,17 +132,17 @@ namespace Library.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_BookAuthors", x => new { x.ISBN, x.Author_Id });
+                    table.PrimaryKey("PK_BookAuthor", x => new { x.ISBN, x.Author_Id });
                     table.ForeignKey(
-                        name: "FK_BookAuthors_Authors_Author_Id",
+                        name: "FK_BookAuthor_Author_Author_Id",
                         column: x => x.Author_Id,
-                        principalTable: "Authors",
+                        principalTable: "Author",
                         principalColumn: "Author_ID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_BookAuthors_Books_ISBN",
+                        name: "FK_BookAuthor_Book_ISBN",
                         column: x => x.ISBN,
-                        principalTable: "Books",
+                        principalTable: "Book",
                         principalColumn: "ISBN",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -153,19 +153,19 @@ namespace Library.Migrations
                 column: "Library_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_BookAuthors_Author_Id",
-                table: "BookAuthors",
-                column: "Author_Id");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Books_CatalogID",
-                table: "Books",
+                name: "IX_Book_CatalogID",
+                table: "Book",
                 column: "CatalogID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Books_Library_ID",
-                table: "Books",
+                name: "IX_Book_Library_ID",
+                table: "Book",
                 column: "Library_ID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_BookAuthor_Author_Id",
+                table: "BookAuthor",
+                column: "Author_Id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Patron_Account_number",
@@ -177,16 +177,16 @@ namespace Library.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "BookAuthors");
+                name: "BookAuthor");
 
             migrationBuilder.DropTable(
                 name: "Patron");
 
             migrationBuilder.DropTable(
-                name: "Authors");
+                name: "Author");
 
             migrationBuilder.DropTable(
-                name: "Books");
+                name: "Book");
 
             migrationBuilder.DropTable(
                 name: "Accounts");
