@@ -33,6 +33,21 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Librarians",
+                columns: table => new
+                {
+                    Librarian_ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true),
+                    Position = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Librarians", x => x.Librarian_ID);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Libraries",
                 columns: table => new
                 {
@@ -47,7 +62,7 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Accounts",
+                name: "Account",
                 columns: table => new
                 {
                     Account_number = table.Column<int>(nullable: false)
@@ -58,9 +73,9 @@ namespace Library.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Accounts", x => x.Account_number);
+                    table.PrimaryKey("PK_Account", x => x.Account_number);
                     table.ForeignKey(
-                        name: "FK_Accounts_Libraries_Library_ID",
+                        name: "FK_Account_Libraries_Library_ID",
                         column: x => x.Library_ID,
                         principalTable: "Libraries",
                         principalColumn: "Library_ID",
@@ -84,11 +99,18 @@ namespace Library.Migrations
                     Tag = table.Column<int>(nullable: true),
                     IsReferenceOnly = table.Column<bool>(nullable: true),
                     CatalogID = table.Column<int>(nullable: true),
-                    Library_ID = table.Column<int>(nullable: true)
+                    Library_ID = table.Column<int>(nullable: true),
+                    Account_number = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Book", x => x.ISBN);
+                    table.ForeignKey(
+                        name: "FK_Book_Account_Account_number",
+                        column: x => x.Account_number,
+                        principalTable: "Account",
+                        principalColumn: "Account_number",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Book_Catalogs_CatalogID",
                         column: x => x.CatalogID,
@@ -110,15 +132,16 @@ namespace Library.Migrations
                     Patron_ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
+                    Address = table.Column<string>(nullable: true),
                     Account_number = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Patron", x => x.Patron_ID);
                     table.ForeignKey(
-                        name: "FK_Patron_Accounts_Account_number",
+                        name: "FK_Patron_Account_Account_number",
                         column: x => x.Account_number,
-                        principalTable: "Accounts",
+                        principalTable: "Account",
                         principalColumn: "Account_number",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -148,9 +171,14 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Accounts_Library_ID",
-                table: "Accounts",
+                name: "IX_Account_Library_ID",
+                table: "Account",
                 column: "Library_ID");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Book_Account_number",
+                table: "Book",
+                column: "Account_number");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Book_CatalogID",
@@ -180,6 +208,9 @@ namespace Library.Migrations
                 name: "BookAuthor");
 
             migrationBuilder.DropTable(
+                name: "Librarians");
+
+            migrationBuilder.DropTable(
                 name: "Patron");
 
             migrationBuilder.DropTable(
@@ -189,7 +220,7 @@ namespace Library.Migrations
                 name: "Book");
 
             migrationBuilder.DropTable(
-                name: "Accounts");
+                name: "Account");
 
             migrationBuilder.DropTable(
                 name: "Catalogs");

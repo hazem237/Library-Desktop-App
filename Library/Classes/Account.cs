@@ -19,5 +19,7 @@ namespace Library.Classes
         public Library Library { get; set; }
 
         public Patron Patron { get; set; }
+        public List<Book_Item> Book_Items { get; set; }
+
     }
 }

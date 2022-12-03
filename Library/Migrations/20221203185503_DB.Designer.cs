@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20221203135026_DB")]
+    [Migration("20221203185503_DB")]
     partial class DB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,7 +41,7 @@ namespace Library.Migrations
 
                     b.HasIndex("Library_ID");
 
-                    b.ToTable("Accounts");
+                    b.ToTable("Account");
                 });
 
             modelBuilder.Entity("Library.Classes.Author", b =>
@@ -125,6 +125,27 @@ namespace Library.Migrations
                     b.ToTable("Catalogs");
                 });
 
+            modelBuilder.Entity("Library.Classes.Librarian", b =>
+                {
+                    b.Property<int>("Librarian_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Position")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Librarian_ID");
+
+                    b.ToTable("Librarians");
+                });
+
             modelBuilder.Entity("Library.Classes.Library", b =>
                 {
                     b.Property<int>("Library_ID")
@@ -153,6 +174,9 @@ namespace Library.Migrations
                     b.Property<int>("Account_number")
                         .HasColumnType("int");
 
+                    b.Property<string>("Address")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -168,6 +192,9 @@ namespace Library.Migrations
                 {
                     b.HasBaseType("Library.Classes.Book");
 
+                    b.Property<int?>("Account_number")
+                        .HasColumnType("int");
+
                     b.Property<string>("BarCode")
                         .HasColumnType("nvarchar(max)");
 
@@ -182,6 +209,8 @@ namespace Library.Migrations
 
                     b.Property<int>("Tag")
                         .HasColumnType("int");
+
+                    b.HasIndex("Account_number");
 
                     b.HasIndex("CatalogID");
 
@@ -223,6 +252,10 @@ namespace Library.Migrations
 
             modelBuilder.Entity("Library.Classes.Book_Item", b =>
                 {
+                    b.HasOne("Library.Classes.Account", "Account")
+                        .WithMany("Book_Items")
+                        .HasForeignKey("Account_number");
+
                     b.HasOne("Library.Classes.Catalog", "Catalog")
                         .WithMany("Book_Items")
                         .HasForeignKey("CatalogID");

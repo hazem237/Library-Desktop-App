@@ -9,14 +9,12 @@ namespace Library.Classes
 {
     public class LibraryContext : DbContext
     {
-      //  public DbSet<Book> Books { get; set; }
-      // public DbSet<Author> Authors { get; set; }
-       // public DbSet<BookAuthor> BookAuthors { get; set; }
+
         public DbSet<Book_Item> BookItems { get; set; }
         public DbSet<Catalog> Catalogs { get; set; }
         public DbSet<Library> Libraries { get; set; }
-        public DbSet <Account> Accounts { get; set; }
-      //  public DbSet <Patron> Patrons { get; set;  }
+        public DbSet<Librarian> Librarians { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -15,10 +15,10 @@ namespace Library.Classes
        public int Patron_ID { get; set; }
 
         public string Name { get; set; }
-        private string Address { get; set; }
+        public string Address { get; set; }
 
         [ForeignKey("Account_number")]
         public int Account_number { get; set; }
-      public  Account Account { get; set; }
+        public  Account Account { get; set; }
     }
 }
