@@ -17,5 +17,7 @@ namespace Library.Classes
         public List <Account> Accounts { get; set; }
         public List<Book_Item> Book_Items { get; set; }
 
+        public List<Catalog> Catalogs { get; set; }
+
     }
 }

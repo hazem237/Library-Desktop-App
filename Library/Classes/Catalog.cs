@@ -10,5 +10,6 @@ namespace Library.Classes
     public class Catalog { 
         public int  CatalogID { get; set; }
         public List <Book_Item> Book_Items { get; set; }
+        public Account Account { get; set; }
     }
 }

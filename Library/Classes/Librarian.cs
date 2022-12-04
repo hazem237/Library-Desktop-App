@@ -14,5 +14,6 @@ namespace Library.Classes
         public string Name { get; set; }
         public string Address { get; set; }
         public string Position { get; set; }
+        public List <Book_Item> Book_Items { get; set; }
     }
 }

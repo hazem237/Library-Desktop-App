@@ -21,18 +21,6 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Catalogs",
-                columns: table => new
-                {
-                    CatalogID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Catalogs", x => x.CatalogID);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Librarians",
                 columns: table => new
                 {
@@ -83,42 +71,25 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Book",
+                name: "Catalogs",
                 columns: table => new
                 {
-                    ISBN = table.Column<int>(nullable: false)
+                    CatalogID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Title = table.Column<string>(nullable: true),
-                    Summary = table.Column<string>(nullable: true),
-                    Publisher = table.Column<string>(nullable: true),
-                    Publication_data = table.Column<string>(nullable: true),
-                    Number_of_pages = table.Column<int>(nullable: false),
-                    Language = table.Column<string>(nullable: true),
-                    Discriminator = table.Column<string>(nullable: false),
-                    BarCode = table.Column<string>(nullable: true),
-                    Tag = table.Column<int>(nullable: true),
-                    IsReferenceOnly = table.Column<bool>(nullable: true),
-                    CatalogID = table.Column<int>(nullable: true),
-                    Library_ID = table.Column<int>(nullable: true),
-                    Account_number = table.Column<int>(nullable: true)
+                    Account_number = table.Column<int>(nullable: true),
+                    Library_ID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Book", x => x.ISBN);
+                    table.PrimaryKey("PK_Catalogs", x => x.CatalogID);
                     table.ForeignKey(
-                        name: "FK_Book_Account_Account_number",
+                        name: "FK_Catalogs_Account_Account_number",
                         column: x => x.Account_number,
                         principalTable: "Account",
                         principalColumn: "Account_number",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Book_Catalogs_CatalogID",
-                        column: x => x.CatalogID,
-                        principalTable: "Catalogs",
-                        principalColumn: "CatalogID",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Book_Libraries_Library_ID",
+                        name: "FK_Catalogs_Libraries_Library_ID",
                         column: x => x.Library_ID,
                         principalTable: "Libraries",
                         principalColumn: "Library_ID",
@@ -144,6 +115,56 @@ namespace Library.Migrations
                         principalTable: "Account",
                         principalColumn: "Account_number",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Book",
+                columns: table => new
+                {
+                    ISBN = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Title = table.Column<string>(nullable: true),
+                    Summary = table.Column<string>(nullable: true),
+                    Publisher = table.Column<string>(nullable: true),
+                    Publication_data = table.Column<string>(nullable: true),
+                    Number_of_pages = table.Column<int>(nullable: false),
+                    Language = table.Column<string>(nullable: true),
+                    Discriminator = table.Column<string>(nullable: false),
+                    BarCode = table.Column<string>(nullable: true),
+                    Tag = table.Column<int>(nullable: true),
+                    IsReferenceOnly = table.Column<bool>(nullable: true),
+                    CatalogID = table.Column<int>(nullable: true),
+                    Library_ID = table.Column<int>(nullable: true),
+                    Account_number = table.Column<int>(nullable: true),
+                    Librarian_ID = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Book", x => x.ISBN);
+                    table.ForeignKey(
+                        name: "FK_Book_Account_Account_number",
+                        column: x => x.Account_number,
+                        principalTable: "Account",
+                        principalColumn: "Account_number",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Book_Catalogs_CatalogID",
+                        column: x => x.CatalogID,
+                        principalTable: "Catalogs",
+                        principalColumn: "CatalogID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Book_Librarians_Librarian_ID",
+                        column: x => x.Librarian_ID,
+                        principalTable: "Librarians",
+                        principalColumn: "Librarian_ID",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Book_Libraries_Library_ID",
+                        column: x => x.Library_ID,
+                        principalTable: "Libraries",
+                        principalColumn: "Library_ID",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -186,6 +207,11 @@ namespace Library.Migrations
                 column: "CatalogID");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Book_Librarian_ID",
+                table: "Book",
+                column: "Librarian_ID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Book_Library_ID",
                 table: "Book",
                 column: "Library_ID");
@@ -194,6 +220,16 @@ namespace Library.Migrations
                 name: "IX_BookAuthor_Author_Id",
                 table: "BookAuthor",
                 column: "Author_Id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Catalogs_Account_number",
+                table: "Catalogs",
+                column: "Account_number");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Catalogs_Library_ID",
+                table: "Catalogs",
+                column: "Library_ID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Patron_Account_number",
@@ -208,9 +244,6 @@ namespace Library.Migrations
                 name: "BookAuthor");
 
             migrationBuilder.DropTable(
-                name: "Librarians");
-
-            migrationBuilder.DropTable(
                 name: "Patron");
 
             migrationBuilder.DropTable(
@@ -220,10 +253,13 @@ namespace Library.Migrations
                 name: "Book");
 
             migrationBuilder.DropTable(
-                name: "Account");
+                name: "Catalogs");
 
             migrationBuilder.DropTable(
-                name: "Catalogs");
+                name: "Librarians");
+
+            migrationBuilder.DropTable(
+                name: "Account");
 
             migrationBuilder.DropTable(
                 name: "Libraries");

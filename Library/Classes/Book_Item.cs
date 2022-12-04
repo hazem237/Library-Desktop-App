@@ -16,5 +16,6 @@ namespace Library.Classes
         public Catalog Catalog { get; set; }
         public Library Library { get; set; }
         public Account Account { get; set; }
+        public Librarian Librarian { get; set; }
     }
 }

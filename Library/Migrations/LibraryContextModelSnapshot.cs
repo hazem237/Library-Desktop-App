@@ -118,7 +118,17 @@ namespace Library.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("Account_number")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Library_ID")
+                        .HasColumnType("int");
+
                     b.HasKey("CatalogID");
+
+                    b.HasIndex("Account_number");
+
+                    b.HasIndex("Library_ID");
 
                     b.ToTable("Catalogs");
                 });
@@ -202,6 +212,9 @@ namespace Library.Migrations
                     b.Property<bool>("IsReferenceOnly")
                         .HasColumnType("bit");
 
+                    b.Property<int?>("Librarian_ID")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Library_ID")
                         .HasColumnType("int");
 
@@ -211,6 +224,8 @@ namespace Library.Migrations
                     b.HasIndex("Account_number");
 
                     b.HasIndex("CatalogID");
+
+                    b.HasIndex("Librarian_ID");
 
                     b.HasIndex("Library_ID");
 
@@ -239,6 +254,17 @@ namespace Library.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Library.Classes.Catalog", b =>
+                {
+                    b.HasOne("Library.Classes.Account", "Account")
+                        .WithMany()
+                        .HasForeignKey("Account_number");
+
+                    b.HasOne("Library.Classes.Library", null)
+                        .WithMany("Catalogs")
+                        .HasForeignKey("Library_ID");
+                });
+
             modelBuilder.Entity("Library.Classes.Patron", b =>
                 {
                     b.HasOne("Library.Classes.Account", "Account")
@@ -257,6 +283,10 @@ namespace Library.Migrations
                     b.HasOne("Library.Classes.Catalog", "Catalog")
                         .WithMany("Book_Items")
                         .HasForeignKey("CatalogID");
+
+                    b.HasOne("Library.Classes.Librarian", "Librarian")
+                        .WithMany("Book_Items")
+                        .HasForeignKey("Librarian_ID");
 
                     b.HasOne("Library.Classes.Library", "Library")
                         .WithMany("Book_Items")
