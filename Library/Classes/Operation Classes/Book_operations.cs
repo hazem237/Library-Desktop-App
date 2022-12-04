@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Library.Interfaces
+namespace Library.Classes.Operation_Classes
 {
-    public interface Manage
+    internal class Book_operations
     {
-         /* Some Functions */
     }
 }
