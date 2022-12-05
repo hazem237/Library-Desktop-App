@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace Library.Classes.Operation_Classes
 {
-    internal class Catalogs_Operation
+    public class Catalogs_Operation
     {
+        LibraryContext Catalog_ctx = new LibraryContext();
+        public void Add_Catalog(Catalog c)
+        {
+            Catalog_ctx.Catalogs.Add(c);
+            Catalog_ctx.SaveChanges();
+        }
     }
 }

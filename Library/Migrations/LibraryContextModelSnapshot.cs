@@ -39,7 +39,7 @@ namespace Library.Migrations
 
                     b.HasIndex("Library_ID");
 
-                    b.ToTable("Account");
+                    b.ToTable("Accounts");
                 });
 
             modelBuilder.Entity("Library.Classes.Author", b =>
@@ -57,7 +57,7 @@ namespace Library.Migrations
 
                     b.HasKey("Author_ID");
 
-                    b.ToTable("Author");
+                    b.ToTable("Authors");
                 });
 
             modelBuilder.Entity("Library.Classes.Book", b =>
@@ -91,7 +91,7 @@ namespace Library.Migrations
 
                     b.HasKey("ISBN");
 
-                    b.ToTable("Book");
+                    b.ToTable("Books");
 
                     b.HasDiscriminator<string>("Discriminator").HasValue("Book");
                 });
@@ -108,7 +108,7 @@ namespace Library.Migrations
 
                     b.HasIndex("Author_Id");
 
-                    b.ToTable("BookAuthor");
+                    b.ToTable("BookAuthors");
                 });
 
             modelBuilder.Entity("Library.Classes.Catalog", b =>
@@ -199,7 +199,7 @@ namespace Library.Migrations
                     b.HasIndex("Account_number")
                         .IsUnique();
 
-                    b.ToTable("Patron");
+                    b.ToTable("Patrons");
                 });
 
             modelBuilder.Entity("Library.Classes.Book_Item", b =>

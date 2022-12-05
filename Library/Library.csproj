@@ -174,6 +174,10 @@
     <Compile Include="Classes\Basic Classes\LibraryContext.cs" />
     <Compile Include="Classes\Basic Classes\Patron.cs" />
     <Compile Include="Classes\Operation Classes\Book_operations.cs" />
+    <Compile Include="Classes\Operation Classes\Catalogs_Operation.cs" />
+    <Compile Include="Classes\Operation Classes\Librarin_Operation.cs" />
+    <Compile Include="Classes\Operation Classes\Library_Operation.cs" />
+    <Compile Include="Classes\Operation Classes\Patron_Operation.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,9 +185,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Search.cs" />
-    <Compile Include="Migrations\20221205154253_d.cs" />
-    <Compile Include="Migrations\20221205154253_d.designer.cs">
-      <DependentUpon>20221205154253_d.cs</DependentUpon>
+    <Compile Include="Migrations\20221205160842_db.cs" />
+    <Compile Include="Migrations\20221205160842_db.designer.cs">
+      <DependentUpon>20221205160842_db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\LibraryContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
