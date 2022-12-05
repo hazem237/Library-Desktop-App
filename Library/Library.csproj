@@ -173,6 +173,7 @@
     <Compile Include="Classes\Basic Classes\Library .cs" />
     <Compile Include="Classes\Basic Classes\LibraryContext.cs" />
     <Compile Include="Classes\Basic Classes\Patron.cs" />
+    <Compile Include="Classes\Operation Classes\Book_operations.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -180,9 +181,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Search.cs" />
-    <Compile Include="Migrations\20221204100839_DB.cs" />
-    <Compile Include="Migrations\20221204100839_DB.designer.cs">
-      <DependentUpon>20221204100839_DB.cs</DependentUpon>
+    <Compile Include="Migrations\20221205154253_d.cs" />
+    <Compile Include="Migrations\20221205154253_d.designer.cs">
+      <DependentUpon>20221205154253_d.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\LibraryContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
@@ -217,9 +218,7 @@
   <ItemGroup>
     <None Include="Resources\giammarco-eWpBNXRHfTI-unsplash.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\Operation Classes\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
