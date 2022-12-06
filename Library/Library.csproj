@@ -184,16 +184,22 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin_Form.cs">
+    <Compile Include="Forms\Admin\Add_Catalog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Admin_Form.Designer.cs">
+    <Compile Include="Forms\Admin\Add_Catalog.Designer.cs">
+      <DependentUpon>Add_Catalog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Admin\Admin_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Admin_Form.Designer.cs">
       <DependentUpon>Admin_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Search.cs" />
-    <Compile Include="Migrations\20221206061227_d.cs" />
-    <Compile Include="Migrations\20221206061227_d.designer.cs">
-      <DependentUpon>20221206061227_d.cs</DependentUpon>
+    <Compile Include="Migrations\20221206063949_d.cs" />
+    <Compile Include="Migrations\20221206063949_d.designer.cs">
+      <DependentUpon>20221206063949_d.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\LibraryContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
@@ -201,7 +207,7 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Admin_Form.resx">
+    <EmbeddedResource Include="Forms\Admin\Admin_Form.resx">
       <DependentUpon>Admin_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

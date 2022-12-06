@@ -121,6 +121,9 @@ namespace Library.Migrations
                     b.Property<int?>("Account_number")
                         .HasColumnType("int");
 
+                    b.Property<string>("Catalog_Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int?>("Library_ID")
                         .HasColumnType("int");
 
