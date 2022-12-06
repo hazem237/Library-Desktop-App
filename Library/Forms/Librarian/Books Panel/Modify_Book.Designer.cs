@@ -65,10 +65,11 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(78, 122);
+            this.comboBox1.Location = new System.Drawing.Point(89, 122);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(212, 21);
+            this.comboBox1.Size = new System.Drawing.Size(215, 21);
             this.comboBox1.TabIndex = 2;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -163,6 +164,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Modify_Book";
             this.Text = "Modify_Book";
+            this.Load += new System.EventHandler(this.Modify_Book_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

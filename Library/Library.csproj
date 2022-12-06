@@ -244,6 +244,12 @@
     <Compile Include="Forms\Librarian\Librarian_Panel.Designer.cs">
       <DependentUpon>Librarian_Panel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Librarian\Patrons Panel\Modify_Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Librarian\Patrons Panel\Modify_Account.Designer.cs">
+      <DependentUpon>Modify_Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Librarian\Patrons Panel\Patron_panel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +296,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Librarian\Librarian_Panel.resx">
       <DependentUpon>Librarian_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Librarian\Patrons Panel\Modify_Account.resx">
+      <DependentUpon>Modify_Account.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Librarian\Patrons Panel\Patron_panel.resx">
       <DependentUpon>Patron_panel.cs</DependentUpon>

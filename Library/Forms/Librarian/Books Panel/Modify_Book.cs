@@ -26,5 +26,15 @@ namespace Library.Forms.Librarian.Books_Panel
         {
 
         }
+
+        private void Modify_Book_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
