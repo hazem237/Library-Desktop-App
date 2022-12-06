@@ -185,9 +185,9 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Search.cs" />
-    <Compile Include="Migrations\20221205160842_db.cs" />
-    <Compile Include="Migrations\20221205160842_db.designer.cs">
-      <DependentUpon>20221205160842_db.cs</DependentUpon>
+    <Compile Include="Migrations\20221206061227_d.cs" />
+    <Compile Include="Migrations\20221206061227_d.designer.cs">
+      <DependentUpon>20221206061227_d.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\LibraryContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
