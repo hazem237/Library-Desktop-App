@@ -202,6 +202,12 @@
     <Compile Include="Forms\Admin\Admin_Form.Designer.cs">
       <DependentUpon>Admin_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\Librarians_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Librarians_Form.Designer.cs">
+      <DependentUpon>Librarians_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Search.cs" />
     <Compile Include="Migrations\20221206063949_d.cs" />
     <Compile Include="Migrations\20221206063949_d.designer.cs">
@@ -221,6 +227,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Admin_Form.resx">
       <DependentUpon>Admin_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Librarians_Form.resx">
+      <DependentUpon>Librarians_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -254,6 +263,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\beautiful-arrangement-different-books_23-2148883798.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screen-Shot-2019-10-11-at-2.00.29-PM.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

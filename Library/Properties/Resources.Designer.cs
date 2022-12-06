@@ -89,5 +89,15 @@ namespace Library.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screen_Shot_2019_10_11_at_2_00_29_PM {
+            get {
+                object obj = ResourceManager.GetObject("Screen-Shot-2019-10-11-at-2.00.29-PM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
