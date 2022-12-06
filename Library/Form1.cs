@@ -12,6 +12,8 @@ namespace Library
 {
     public partial class Form1 : Form
     {
+        public string Email = "hazem_haddad@gmail.com";
+        public string Password = "123123";
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +28,11 @@ namespace Library
             label1.BackColor = Color.Transparent;
             label2.BackColor = Color.Transparent;
             label3.BackColor = Color.Transparent;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
