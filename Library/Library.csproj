@@ -190,6 +190,12 @@
     <Compile Include="Forms\Admin\Add_Catalog.Designer.cs">
       <DependentUpon>Add_Catalog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\Add_Library.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Add_Library.Designer.cs">
+      <DependentUpon>Add_Library.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\Admin_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,6 +212,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Add_Catalog.resx">
+      <DependentUpon>Add_Catalog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Admin\Add_Library.resx">
+      <DependentUpon>Add_Library.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Admin\Admin_Form.resx">
       <DependentUpon>Admin_Form.cs</DependentUpon>
@@ -239,6 +251,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\pexels-stanislav-kondratiev-2908984.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\beautiful-arrangement-different-books_23-2148883798.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.1.0\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />

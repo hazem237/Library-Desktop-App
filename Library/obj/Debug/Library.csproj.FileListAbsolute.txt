@@ -183,3 +183,5 @@ C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.csproj.
 C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.exe
 C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.pdb
 C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Admin_Form.resources
+C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Admin.Add_Catalog.resources
+C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Admin.Add_Library.resources
