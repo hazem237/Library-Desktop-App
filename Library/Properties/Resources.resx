@@ -124,13 +124,16 @@
   <data name="pexels-stanislav-kondratiev-2908984" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pexels-stanislav-kondratiev-2908984.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Patron" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Patron.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Screen-Shot-2019-10-11-at-2.00.29-PM" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Screen-Shot-2019-10-11-at-2.00.29-PM.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="beautiful-arrangement-different-books_23-2148883798" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\beautiful-arrangement-different-books_23-2148883798.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Patron" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Patron.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Books" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Books.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
