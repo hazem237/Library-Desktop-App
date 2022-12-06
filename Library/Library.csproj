@@ -226,6 +226,12 @@
     <Compile Include="Forms\Librarian\Books Panel\Delete_Book.Designer.cs">
       <DependentUpon>Delete_Book.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Librarian\Books Panel\Modify_Book.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Librarian\Books Panel\Modify_Book.Designer.cs">
+      <DependentUpon>Modify_Book.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Librarian\Librarian_Panel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Librarian\Books Panel\Delete_Book.resx">
       <DependentUpon>Delete_Book.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Librarian\Books Panel\Modify_Book.resx">
+      <DependentUpon>Modify_Book.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Librarian\Librarian_Panel.resx">
       <DependentUpon>Librarian_Panel.cs</DependentUpon>
