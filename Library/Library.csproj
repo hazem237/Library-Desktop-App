@@ -244,6 +244,12 @@
     <Compile Include="Forms\Librarian\Librarian_Panel.Designer.cs">
       <DependentUpon>Librarian_Panel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Librarian\Patrons Panel\Patron_panel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Librarian\Patrons Panel\Patron_panel.Designer.cs">
+      <DependentUpon>Patron_panel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaces\Search.cs" />
     <Compile Include="Migrations\20221206063949_d.cs" />
     <Compile Include="Migrations\20221206063949_d.designer.cs">
@@ -285,6 +291,9 @@
     <EmbeddedResource Include="Forms\Librarian\Librarian_Panel.resx">
       <DependentUpon>Librarian_Panel.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Librarian\Patrons Panel\Patron_panel.resx">
+      <DependentUpon>Patron_panel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -324,9 +333,7 @@
   <ItemGroup>
     <None Include="Resources\Patron.jpg" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Librarian\Patron Panel\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Books.jpg" />
   </ItemGroup>
