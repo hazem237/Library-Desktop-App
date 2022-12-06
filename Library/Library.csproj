@@ -214,11 +214,17 @@
     <Compile Include="Forms\Admin\Patrons_Form.Designer.cs">
       <DependentUpon>Patrons_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Librarian\Books Panel\Books_Panel.cs">
+    <Compile Include="Forms\Librarian\Books Panel\Book_Panel.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Librarian\Books Panel\Books_Panel.Designer.cs">
-      <DependentUpon>Books_Panel.cs</DependentUpon>
+    <Compile Include="Forms\Librarian\Books Panel\Book_Panel.Designer.cs">
+      <DependentUpon>Book_Panel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Librarian\Books Panel\Delete_Book.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Librarian\Books Panel\Delete_Book.Designer.cs">
+      <DependentUpon>Delete_Book.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Librarian\Librarian_Panel.cs">
       <SubType>Form</SubType>
@@ -252,8 +258,11 @@
     <EmbeddedResource Include="Forms\Admin\Patrons_Form.resx">
       <DependentUpon>Patrons_Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Librarian\Books Panel\Books_Panel.resx">
-      <DependentUpon>Books_Panel.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\Librarian\Books Panel\Book_Panel.resx">
+      <DependentUpon>Book_Panel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Librarian\Books Panel\Delete_Book.resx">
+      <DependentUpon>Delete_Book.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Librarian\Librarian_Panel.resx">
       <DependentUpon>Librarian_Panel.cs</DependentUpon>

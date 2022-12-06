@@ -188,4 +188,5 @@ C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.A
 C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Admin.Librarians_Form.resources
 C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Admin.Patrons_Form.resources
 C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Librarian.Librarian_Panel.resources
-C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Librarian.Books_Panel.resources
+C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Librarian.Books_Panel.Delete_Book.resources
+C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Librarian.Book_Panel.resources
