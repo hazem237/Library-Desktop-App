@@ -40,5 +40,11 @@ namespace Library.Forms
             Librarians_Form librarians_Form = new Librarians_Form();
             librarians_Form.ShowDialog();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Add_Account add_Account = new Add_Account();
+            add_Account.ShowDialog();
+        }
     }
 }
