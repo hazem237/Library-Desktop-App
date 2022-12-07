@@ -1,4 +1,5 @@
 ﻿using Library.Forms;
+using Library.Forms.Librarian;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -37,6 +38,16 @@ namespace Library
             {
                 Admin_Form admin = new Admin_Form();
                 admin.ShowDialog();
+            }
+            else
+            {
+                Classes.LibraryContext ctx = new Classes.LibraryContext();
+                var a = ctx.Librarians.Where(a2 => a2.Email == textBox2.Text && a2.Password == textBox3.Text).Single();
+                if (a != null)
+                {
+                    Librarian_Panel r = new Librarian_Panel();
+                    r.ShowDialog();
+                }
             }
         }
     }
