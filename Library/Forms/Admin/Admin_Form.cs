@@ -46,5 +46,12 @@ namespace Library.Forms
             Add_Account add_Account = new Add_Account();
             add_Account.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Patrons_Form patrons_Form = new Patrons_Form();
+            patrons_Form.ShowDialog();
+        }
+        
     }
 }
