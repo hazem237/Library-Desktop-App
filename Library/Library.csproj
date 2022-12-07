@@ -170,9 +170,10 @@
     <Compile Include="Classes\Basic Classes\Book_Item.cs" />
     <Compile Include="Classes\Basic Classes\Catalog.cs" />
     <Compile Include="Classes\Basic Classes\Librarian.cs" />
-    <Compile Include="Classes\Basic Classes\Library_Class .cs" />
     <Compile Include="Classes\Basic Classes\LibraryContext.cs" />
+    <Compile Include="Classes\Basic Classes\Library_Class.cs" />
     <Compile Include="Classes\Basic Classes\Patron.cs" />
+    <Compile Include="Classes\Basic Classes\Test.cs" />
     <Compile Include="Classes\Operation Classes\Book_operations.cs" />
     <Compile Include="Classes\Operation Classes\Catalogs_Operation.cs" />
     <Compile Include="Classes\Operation Classes\Librarin_Operation.cs" />
@@ -214,7 +215,6 @@
     <Compile Include="Forms\Admin\Librarians_Form.Designer.cs">
       <DependentUpon>Librarians_Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Admin\Library_Class.cs" />
     <Compile Include="Forms\Admin\Patrons_Form.cs">
       <SubType>Form</SubType>
     </Compile>
