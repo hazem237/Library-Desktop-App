@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Library.Classes;
 
 namespace Library.Forms.Admin
 {
@@ -15,6 +16,12 @@ namespace Library.Forms.Admin
         public Add_Library()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Library_Class l = new Library_Class();
+            
         }
     }
 }

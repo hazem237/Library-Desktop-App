@@ -9,7 +9,7 @@ namespace Library.Classes.Operation_Classes
     public class Library_Operation
     {
         LibraryContext Library_ctx = new LibraryContext();
-        public void Add_Library(Library l)
+        public void Add_Library(Library_Class l)
         {
             Library_ctx.Libraries.Add(l);
             Library_ctx.SaveChanges();

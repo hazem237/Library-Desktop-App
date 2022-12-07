@@ -12,7 +12,7 @@ namespace Library.Classes
 
         public DbSet<Book_Item> BookItems { get; set; }
         public DbSet<Catalog> Catalogs { get; set; }
-        public DbSet<Library> Libraries { get; set; }
+        public DbSet<Library_Class> Libraries { get; set; }
         public DbSet<Librarian> Librarians { get; set; }
        public DbSet<Account> Accounts { get; set; }
         public DbSet <Patron> Patrons { get; set;  }

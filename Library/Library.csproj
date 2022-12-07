@@ -170,7 +170,7 @@
     <Compile Include="Classes\Basic Classes\Book_Item.cs" />
     <Compile Include="Classes\Basic Classes\Catalog.cs" />
     <Compile Include="Classes\Basic Classes\Librarian.cs" />
-    <Compile Include="Classes\Basic Classes\Library .cs" />
+    <Compile Include="Classes\Basic Classes\Library_Class .cs" />
     <Compile Include="Classes\Basic Classes\LibraryContext.cs" />
     <Compile Include="Classes\Basic Classes\Patron.cs" />
     <Compile Include="Classes\Operation Classes\Book_operations.cs" />
@@ -214,6 +214,7 @@
     <Compile Include="Forms\Admin\Librarians_Form.Designer.cs">
       <DependentUpon>Librarians_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\Library_Class.cs" />
     <Compile Include="Forms\Admin\Patrons_Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,9 +264,9 @@
       <DependentUpon>Patron_panel.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Search.cs" />
-    <Compile Include="Migrations\20221207150314_db.cs" />
-    <Compile Include="Migrations\20221207150314_db.designer.cs">
-      <DependentUpon>20221207150314_db.cs</DependentUpon>
+    <Compile Include="Migrations\20221207154308_db.cs" />
+    <Compile Include="Migrations\20221207154308_db.designer.cs">
+      <DependentUpon>20221207154308_db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\LibraryContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />

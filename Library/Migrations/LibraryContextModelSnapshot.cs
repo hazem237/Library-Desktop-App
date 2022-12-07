@@ -127,14 +127,14 @@ namespace Library.Migrations
                     b.Property<string>("Catalog_Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Library_ID")
+                    b.Property<int?>("Library_ClassLibrary_ID")
                         .HasColumnType("int");
 
                     b.HasKey("CatalogID");
 
                     b.HasIndex("Account_number");
 
-                    b.HasIndex("Library_ID");
+                    b.HasIndex("Library_ClassLibrary_ID");
 
                     b.ToTable("Catalogs");
                 });
@@ -166,7 +166,7 @@ namespace Library.Migrations
                     b.ToTable("Librarians");
                 });
 
-            modelBuilder.Entity("Library.Classes.Library", b =>
+            modelBuilder.Entity("Library.Classes.Library_Class", b =>
                 {
                     b.Property<int>("Library_ID")
                         .ValueGeneratedOnAdd()
@@ -246,7 +246,7 @@ namespace Library.Migrations
 
             modelBuilder.Entity("Library.Classes.Account", b =>
                 {
-                    b.HasOne("Library.Classes.Library", "Library")
+                    b.HasOne("Library.Classes.Library_Class", "Library")
                         .WithMany("Accounts")
                         .HasForeignKey("Library_ID");
                 });
@@ -272,9 +272,9 @@ namespace Library.Migrations
                         .WithMany()
                         .HasForeignKey("Account_number");
 
-                    b.HasOne("Library.Classes.Library", null)
+                    b.HasOne("Library.Classes.Library_Class", null)
                         .WithMany("Catalogs")
-                        .HasForeignKey("Library_ID");
+                        .HasForeignKey("Library_ClassLibrary_ID");
                 });
 
             modelBuilder.Entity("Library.Classes.Patron", b =>
@@ -300,7 +300,7 @@ namespace Library.Migrations
                         .WithMany("Book_Items")
                         .HasForeignKey("Librarian_ID");
 
-                    b.HasOne("Library.Classes.Library", "Library")
+                    b.HasOne("Library.Classes.Library_Class", "Library")
                         .WithMany("Book_Items")
                         .HasForeignKey("Library_ID");
                 });

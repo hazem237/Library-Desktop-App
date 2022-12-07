@@ -8,6 +8,6 @@ namespace Library.Interfaces
 {
     public interface Search
     {
-        /* Some Functions */
+        string Search_Book(int isbn);
     }
 }

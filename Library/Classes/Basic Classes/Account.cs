@@ -17,7 +17,7 @@ namespace Library.Classes
         public string Date_opened { get; set; }
        // public AccountState state { get; set;}
 
-        public Library Library { get; set; }
+        public Library_Class Library { get; set; }
 
         public Patron Patron { get; set; }
         public List<Book_Item> Book_Items { get; set; }
