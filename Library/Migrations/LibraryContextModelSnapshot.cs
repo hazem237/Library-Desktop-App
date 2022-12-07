@@ -26,9 +26,6 @@ namespace Library.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int?>("AccountStateState_ID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Date_opened")
                         .HasColumnType("nvarchar(max)");
 
@@ -38,25 +35,14 @@ namespace Library.Migrations
                     b.Property<int?>("Library_ID")
                         .HasColumnType("int");
 
-                    b.HasKey("Account_number");
+                    b.Property<int>("account_State")
+                        .HasColumnType("int");
 
-                    b.HasIndex("AccountStateState_ID");
+                    b.HasKey("Account_number");
 
                     b.HasIndex("Library_ID");
 
                     b.ToTable("Accounts");
-                });
-
-            modelBuilder.Entity("Library.Classes.AccountState", b =>
-                {
-                    b.Property<int>("State_ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.HasKey("State_ID");
-
-                    b.ToTable("AccountState");
                 });
 
             modelBuilder.Entity("Library.Classes.Author", b =>
@@ -260,10 +246,6 @@ namespace Library.Migrations
 
             modelBuilder.Entity("Library.Classes.Account", b =>
                 {
-                    b.HasOne("Library.Classes.AccountState", "AccountState")
-                        .WithMany()
-                        .HasForeignKey("AccountStateState_ID");
-
                     b.HasOne("Library.Classes.Library", "Library")
                         .WithMany("Accounts")
                         .HasForeignKey("Library_ID");

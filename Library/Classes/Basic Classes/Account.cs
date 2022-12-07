@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Classes.Basic_Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace Library.Classes
 
         public Patron Patron { get; set; }
         public List<Book_Item> Book_Items { get; set; }
-        public AccountState AccountState { get; set; }
+        public Account_State account_State { get; set; }
 
     }
 }

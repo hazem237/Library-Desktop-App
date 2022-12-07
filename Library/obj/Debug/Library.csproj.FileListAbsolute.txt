@@ -193,6 +193,5 @@ C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.L
 C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Librarian.Books_Panel.Modify_Book.resources
 C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Librarian.Books_Panel.Filter_Book.resources
 C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Librarian.Patron_Panel.Patron_panel.resources
-C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Librarian.Patrons_Panel.Modify_Account.resources
 C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Librarian.Books_Panel.Add_Author.resources
 C:\Users\yas se\Desktop\t2\Library-Desktop-App\Library\obj\Debug\Library.Forms.Admin.Add_Account.resources

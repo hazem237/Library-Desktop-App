@@ -163,7 +163,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Basic Classes\Account.cs" />
-    <Compile Include="Classes\Basic Classes\AccountState.cs" />
+    <Compile Include="Classes\Basic Classes\Account_State.cs" />
     <Compile Include="Classes\Basic Classes\Author.cs" />
     <Compile Include="Classes\Basic Classes\Book.cs" />
     <Compile Include="Classes\Basic Classes\BookAuthor.cs" />
@@ -256,12 +256,6 @@
     <Compile Include="Forms\Librarian\Librarian_Panel.Designer.cs">
       <DependentUpon>Librarian_Panel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Librarian\Patrons Panel\Modify_Account.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\Librarian\Patrons Panel\Modify_Account.Designer.cs">
-      <DependentUpon>Modify_Account.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Librarian\Patrons Panel\Patron_panel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,9 +263,9 @@
       <DependentUpon>Patron_panel.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Search.cs" />
-    <Compile Include="Migrations\20221207040223_DB.cs" />
-    <Compile Include="Migrations\20221207040223_DB.designer.cs">
-      <DependentUpon>20221207040223_DB.cs</DependentUpon>
+    <Compile Include="Migrations\20221207150314_db.cs" />
+    <Compile Include="Migrations\20221207150314_db.designer.cs">
+      <DependentUpon>20221207150314_db.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\LibraryContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
@@ -314,9 +308,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Librarian\Librarian_Panel.resx">
       <DependentUpon>Librarian_Panel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Librarian\Patrons Panel\Modify_Account.resx">
-      <DependentUpon>Modify_Account.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Librarian\Patrons Panel\Patron_panel.resx">
       <DependentUpon>Patron_panel.cs</DependentUpon>
