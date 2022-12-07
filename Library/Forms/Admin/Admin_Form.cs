@@ -28,5 +28,11 @@ namespace Library.Forms
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Add_Library ad = new Add_Library();
+            ad.ShowDialog();
+        }
     }
 }
