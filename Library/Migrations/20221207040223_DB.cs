@@ -2,10 +2,22 @@
 
 namespace Library.Migrations
 {
-    public partial class d : Migration
+    public partial class DB : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "AccountState",
+                columns: table => new
+                {
+                    State_ID = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AccountState", x => x.State_ID);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Authors",
                 columns: table => new
@@ -59,11 +71,18 @@ namespace Library.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     History = table.Column<string>(nullable: true),
                     Date_opened = table.Column<string>(nullable: true),
-                    Library_ID = table.Column<int>(nullable: true)
+                    Library_ID = table.Column<int>(nullable: true),
+                    AccountStateState_ID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Accounts", x => x.Account_number);
+                    table.ForeignKey(
+                        name: "FK_Accounts_AccountState_AccountStateState_ID",
+                        column: x => x.AccountStateState_ID,
+                        principalTable: "AccountState",
+                        principalColumn: "State_ID",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Accounts_Libraries_Library_ID",
                         column: x => x.Library_ID,
@@ -195,6 +214,11 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateIndex(
+                name: "IX_Accounts_AccountStateState_ID",
+                table: "Accounts",
+                column: "AccountStateState_ID");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Accounts_Library_ID",
                 table: "Accounts",
                 column: "Library_ID");
@@ -263,6 +287,9 @@ namespace Library.Migrations
 
             migrationBuilder.DropTable(
                 name: "Accounts");
+
+            migrationBuilder.DropTable(
+                name: "AccountState");
 
             migrationBuilder.DropTable(
                 name: "Libraries");

@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Library.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20221206063949_d")]
-    partial class d
+    [Migration("20221207040223_DB")]
+    partial class DB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -28,6 +28,9 @@ namespace Library.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("AccountStateState_ID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Date_opened")
                         .HasColumnType("nvarchar(max)");
 
@@ -39,9 +42,23 @@ namespace Library.Migrations
 
                     b.HasKey("Account_number");
 
+                    b.HasIndex("AccountStateState_ID");
+
                     b.HasIndex("Library_ID");
 
                     b.ToTable("Accounts");
+                });
+
+            modelBuilder.Entity("Library.Classes.AccountState", b =>
+                {
+                    b.Property<int>("State_ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.HasKey("State_ID");
+
+                    b.ToTable("AccountState");
                 });
 
             modelBuilder.Entity("Library.Classes.Author", b =>
@@ -245,6 +262,10 @@ namespace Library.Migrations
 
             modelBuilder.Entity("Library.Classes.Account", b =>
                 {
+                    b.HasOne("Library.Classes.AccountState", "AccountState")
+                        .WithMany()
+                        .HasForeignKey("AccountStateState_ID");
+
                     b.HasOne("Library.Classes.Library", "Library")
                         .WithMany("Accounts")
                         .HasForeignKey("Library_ID");

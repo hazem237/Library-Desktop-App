@@ -269,9 +269,9 @@
       <DependentUpon>Patron_panel.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaces\Search.cs" />
-    <Compile Include="Migrations\20221206063949_d.cs" />
-    <Compile Include="Migrations\20221206063949_d.designer.cs">
-      <DependentUpon>20221206063949_d.cs</DependentUpon>
+    <Compile Include="Migrations\20221207040223_DB.cs" />
+    <Compile Include="Migrations\20221207040223_DB.designer.cs">
+      <DependentUpon>20221207040223_DB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\LibraryContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
