@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Library.Classes.Operation_Classes
 {
-    public class Book_operations
+    public class Book_operations:Search
     {
         LibraryContext Book_ctx = new LibraryContext();
         public void Add_Book_item(Book_Item B)
@@ -53,6 +54,19 @@ namespace Library.Classes.Operation_Classes
                     default: throw new ArgumentException();
             }
             Book_ctx.SaveChanges();
+        }
+
+        public string Search_Book(int ISBN)
+        {
+            var book = Book_ctx.Books.Where(b => b.ISBN == ISBN).Single();
+           if (book != null)
+            {
+                return " Found ";
+            }
+           else
+            {
+                return " Not Found";
+            }
         }
     }
 }
