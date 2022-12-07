@@ -20,6 +20,7 @@ namespace Library.Classes
 
         public Patron Patron { get; set; }
         public List<Book_Item> Book_Items { get; set; }
+        public AccountState AccountState { get; set; }
 
     }
 }

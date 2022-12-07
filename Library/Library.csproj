@@ -190,6 +190,12 @@
     <Compile Include="Forms\Admin\Add_Catalog.Designer.cs">
       <DependentUpon>Add_Catalog.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Admin\Add_Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Admin\Add_Account.Designer.cs">
+      <DependentUpon>Add_Account.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Admin\Add_Library.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,12 @@
     </Compile>
     <Compile Include="Forms\Admin\Patrons_Form.Designer.cs">
       <DependentUpon>Patrons_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Librarian\Books Panel\Add_Author.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Librarian\Books Panel\Add_Author.Designer.cs">
+      <DependentUpon>Add_Author.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Librarian\Books Panel\Book_Panel.cs">
       <SubType>Form</SubType>
@@ -282,6 +294,9 @@
     <EmbeddedResource Include="Forms\Admin\Patrons_Form.resx">
       <DependentUpon>Patrons_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Librarian\Books Panel\Add_Author.resx">
+      <DependentUpon>Add_Author.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Librarian\Books Panel\Book_Panel.resx">
       <DependentUpon>Book_Panel.cs</DependentUpon>
     </EmbeddedResource>
@@ -342,7 +357,9 @@
   <ItemGroup>
     <None Include="Resources\Patron.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\shutterstock_439120615-1-e1653324868366.jpeg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Books.jpg" />
   </ItemGroup>

@@ -119,5 +119,15 @@ namespace Library.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shutterstock_439120615_1_e1653324868366 {
+            get {
+                object obj = ResourceManager.GetObject("shutterstock_439120615-1-e1653324868366", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

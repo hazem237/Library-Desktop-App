@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Library.Classes
 {
-    internal class AccountState
+    public class AccountState
     {
 
         public enum State_type { 
