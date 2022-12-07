@@ -14,9 +14,16 @@ namespace Library.Classes
 
         public bool IsReferenceOnly { get; set; }  
 
+        public int Catalog_ID { get; set; }
         public Catalog Catalog { get; set; }
+
+        public int library_ID { get; set; }
         public Library_Class Library { get; set; }
+
+        public int Account_ID { get; set; }
         public Account Account { get; set; }
+
+        public int librarian_ID { get; set; }
         public Librarian Librarian { get; set; }
     }
 }

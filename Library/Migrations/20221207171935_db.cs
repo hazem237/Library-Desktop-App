@@ -59,7 +59,9 @@ namespace Library.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     History = table.Column<string>(nullable: true),
                     Date_opened = table.Column<string>(nullable: true),
-                    Library_ID = table.Column<int>(nullable: true),
+                    //library_ID = table.Column<int>(nullable: false),
+                    Library_ID = table.Column<int>(nullable: false),
+                    patron_ID = table.Column<int>(nullable: false),
                     account_State = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
@@ -80,14 +82,15 @@ namespace Library.Migrations
                     CatalogID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Catalog_Name = table.Column<string>(nullable: true),
-                    Library_ClassLibrary_ID = table.Column<int>(nullable: true)
+                   // library_ID = table.Column<int>(nullable: false),
+                    Library_ID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Catalogs", x => x.CatalogID);
                     table.ForeignKey(
-                        name: "FK_Catalogs_Libraries_Library_ClassLibrary_ID",
-                        column: x => x.Library_ClassLibrary_ID,
+                        name: "FK_Catalogs_Libraries_Library_ID",
+                        column: x => x.Library_ID,
                         principalTable: "Libraries",
                         principalColumn: "Library_ID",
                         onDelete: ReferentialAction.Restrict);
@@ -130,9 +133,13 @@ namespace Library.Migrations
                     BarCode = table.Column<string>(nullable: true),
                     Tag = table.Column<int>(nullable: true),
                     IsReferenceOnly = table.Column<bool>(nullable: true),
+                   // Catalog_ID = table.Column<int>(nullable: true),
                     CatalogID = table.Column<int>(nullable: true),
+                   // library_ID = table.Column<int>(nullable: true),
                     Library_ID = table.Column<int>(nullable: true),
+                   // Account_ID = table.Column<int>(nullable: true),
                     Account_number = table.Column<int>(nullable: true),
+                   // librarian_ID = table.Column<int>(nullable: true),
                     Librarian_ID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
@@ -219,9 +226,9 @@ namespace Library.Migrations
                 column: "Library_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Catalogs_Library_ClassLibrary_ID",
+                name: "IX_Catalogs_Library_ID",
                 table: "Catalogs",
-                column: "Library_ClassLibrary_ID");
+                column: "Library_ID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Patrons_Account_number",

@@ -38,6 +38,12 @@ namespace Library.Migrations
                     b.Property<int>("account_State")
                         .HasColumnType("int");
 
+                    b.Property<int>("library_ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("patron_ID")
+                        .HasColumnType("int");
+
                     b.HasKey("Account_number");
 
                     b.HasIndex("Library_ID");
@@ -142,12 +148,15 @@ namespace Library.Migrations
                     b.Property<string>("Catalog_Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Library_ClassLibrary_ID")
+                    b.Property<int?>("Library_ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("library_ID")
                         .HasColumnType("int");
 
                     b.HasKey("CatalogID");
 
-                    b.HasIndex("Library_ClassLibrary_ID");
+                    b.HasIndex("Library_ID");
 
                     b.ToTable("Catalogs");
                 });
@@ -207,6 +216,9 @@ namespace Library.Migrations
                 {
                     b.HasBaseType("Library.Classes.Book");
 
+                    b.Property<int>("Account_ID")
+                        .HasColumnType("int");
+
                     b.Property<int?>("Account_number")
                         .HasColumnType("int");
 
@@ -214,6 +226,9 @@ namespace Library.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("CatalogID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Catalog_ID")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsReferenceOnly")
@@ -226,6 +241,12 @@ namespace Library.Migrations
                         .HasColumnType("int");
 
                     b.Property<int>("Tag")
+                        .HasColumnType("int");
+
+                    b.Property<int>("librarian_ID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("library_ID")
                         .HasColumnType("int");
 
                     b.HasIndex("Account_number");
@@ -263,9 +284,9 @@ namespace Library.Migrations
 
             modelBuilder.Entity("Library.Classes.Catalog", b =>
                 {
-                    b.HasOne("Library.Classes.Basic_Classes.Library_Class", null)
+                    b.HasOne("Library.Classes.Basic_Classes.Library_Class", "library")
                         .WithMany("Catalogs")
-                        .HasForeignKey("Library_ClassLibrary_ID");
+                        .HasForeignKey("Library_ID");
                 });
 
             modelBuilder.Entity("Library.Classes.Patron", b =>
