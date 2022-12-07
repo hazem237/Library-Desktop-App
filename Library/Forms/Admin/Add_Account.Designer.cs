@@ -44,7 +44,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Tahoma", 22F);
-            this.label3.Location = new System.Drawing.Point(101, 65);
+            this.label3.Location = new System.Drawing.Point(101, 99);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(182, 36);
             this.label3.TabIndex = 6;

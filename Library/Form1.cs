@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +33,11 @@ namespace Library
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (textBox2.Text == Email && textBox3.Text == Password)
+            {
+                Admin_Form admin = new Admin_Form();
+                admin.ShowDialog();
+            }
         }
     }
 }
