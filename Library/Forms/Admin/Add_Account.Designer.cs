@@ -80,8 +80,9 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(216, 23);
             this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
+            this.button1.Text = "ADD";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
@@ -102,6 +103,10 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Active",
+            "Frozen ",
+            "Closed"});
             this.comboBox2.Location = new System.Drawing.Point(89, 271);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(216, 21);
