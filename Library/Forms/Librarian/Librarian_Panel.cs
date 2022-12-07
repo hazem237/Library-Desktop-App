@@ -16,5 +16,11 @@ namespace Library.Forms.Librarian
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Book_Panel b = new Book_Panel();
+            b.ShowDialog();
+        }
     }
 }

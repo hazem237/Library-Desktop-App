@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Forms.Librarian.Books_Panel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,12 @@ namespace Library.Forms.Librarian
         public Book_Panel()
         {
             InitializeComponent();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Add_Author a = new Add_Author();
+            a.ShowDialog();
         }
     }
 }

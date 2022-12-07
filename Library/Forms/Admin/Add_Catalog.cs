@@ -31,7 +31,7 @@ namespace Library.Forms.Admin
             c.Catalog_Name = textBox1.Text;
             string key = comboBox1.SelectedItem.ToString();
             int a = ctx.Libraries.Where(x => x.Name == key).Single().Library_ID;
-            c.library_ID = a;
+          
             Catalogs_Operation c2 = new Catalogs_Operation();
             c2.Add_Catalog(c);
 

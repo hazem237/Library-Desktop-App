@@ -19,6 +19,12 @@ namespace Library.Forms.Librarian.Books_Panel
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Classes.Author a = new Classes.Author();
+            a.Authour_Name = textBox1.Text;
+            a.Author_biography = textBox2.Text;
+            Classes.LibraryContext ctx =  new Classes.LibraryContext ();
+            ctx.Authors.Add(a);
+            ctx.SaveChanges();
 
         }
     }
