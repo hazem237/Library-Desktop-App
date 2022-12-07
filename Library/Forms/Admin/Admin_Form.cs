@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Forms.Admin;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,8 @@ namespace Library.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Add_Catalog ad = new Add_Catalog();
+            ad.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
