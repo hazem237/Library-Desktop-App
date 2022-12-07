@@ -13,8 +13,8 @@ namespace Library
 {
     public partial class Form1 : Form
     {
-        public string Email = "hazem_haddad@gmail.com";
-        public string Password = "123123";
+        public string Email = "a";
+        public string Password = "1";
         public Form1()
         {
             InitializeComponent();
