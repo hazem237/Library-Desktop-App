@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Library",
+    "\\Library\\Classes",
+    "\\Library\\Classes\\Basic Classes",
+    "\\Library\\Classes\\Operation Classes",
+    "\\Library\\Forms",
+    "\\Library\\Forms\\Admin",
+    "\\Library\\Forms\\Librarian",
+    "\\Library\\Forms\\Librarian\\Books Panel",
+    "\\Library\\Migrations"
+  ],
+  "SelectedNode": "\\Library\\Classes\\Basic Classes\\AccountState.cs",
+  "PreviewInSolutionExplorer": false
+}

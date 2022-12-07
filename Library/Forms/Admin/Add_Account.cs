@@ -16,5 +16,10 @@ namespace Library.Forms.Admin
         {
             InitializeComponent();
         }
+
+        private void Add_Account_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
