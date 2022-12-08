@@ -47,5 +47,13 @@ namespace Library.Forms.Librarian.Books_Panel
             Classes.Operation_Classes.Book_operations b = new Classes.Operation_Classes.Book_operations();
             richTextBox1.Text= b.Search_Book(Convert.ToInt32(textBox1.Text));
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var b = ctx.BookItems.Max(x => x.Number_of_pages);
+            var b2 = ctx.BookItems.First(x => x.Number_of_pages == b);
+            richTextBox2.Text = b2.Title;
+
+        }
     }
 }
