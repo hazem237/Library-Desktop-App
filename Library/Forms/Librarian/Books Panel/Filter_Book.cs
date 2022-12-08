@@ -55,5 +55,16 @@ namespace Library.Forms.Librarian.Books_Panel
             richTextBox2.Text = b2.Title;
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var r = ctx.BookItems.Where(x => x.Language == "French").ToList();
+            string a="";
+            foreach (var book in r)
+            {
+                a = a + book.Title + '\n';
+            }
+            richTextBox3.Text = a;
+        }
     }
 }
