@@ -12,6 +12,7 @@ namespace Library.Forms.Librarian.Books_Panel
 {
     public partial class Filter_Book : Form
     {
+        Classes.LibraryContext ctx = new Classes.LibraryContext();
         public Filter_Book()
         {
             InitializeComponent();
@@ -40,5 +41,11 @@ namespace Library.Forms.Librarian.Books_Panel
         private void richTextBox5_TextChanged(object sender, EventArgs e)
         {
                     }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Classes.Operation_Classes.Book_operations b = new Classes.Operation_Classes.Book_operations();
+            richTextBox1.Text= b.Search_Book(Convert.ToInt32(textBox1.Text));
+        }
     }
 }

@@ -58,15 +58,13 @@ namespace Library.Classes.Operation_Classes
 
         public string Search_Book(int ISBN)
         {
-            var book = Book_ctx.Books.Where(b => b.ISBN == ISBN).Single();
+            string a = "Not Found";
+            var book = Book_ctx.Books.Where(b => b.ISBN == ISBN).SingleOrDefault();
            if (book != null)
             {
-                return " Found ";
+                a= " Found ";
             }
-           else
-            {
-                return " Not Found";
-            }
+            return a;
         }
     }
 }
