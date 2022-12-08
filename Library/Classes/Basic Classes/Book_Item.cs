@@ -23,7 +23,7 @@ namespace Library.Classes
         public int AccountID { get; set; }
         public Account Account { get; set; }
 
-        public int librarian_ID { get; set; }
+        public int librarianID { get; set; }
         public Librarian Librarian { get; set; }
     }
 }

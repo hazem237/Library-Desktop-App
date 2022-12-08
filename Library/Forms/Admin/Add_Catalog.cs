@@ -30,9 +30,10 @@ namespace Library.Forms.Admin
             Catalog c = new Catalog();
             c.Catalog_Name = textBox1.Text;
             int key = Convert.ToInt32(comboBox1.SelectedItem);
-           // var a = ctx.Libraries.Where(x => x.Name == key).Single();
-           // c.library = a;
-           // c.library_ID = key;
+            // var a = ctx.Libraries.Where(x => x.Name == key).Single();
+            // c.library = a;
+            // c.library_ID = key;
+            c.libraryID = key;
 
 
             ctx.Catalogs.Add(c);

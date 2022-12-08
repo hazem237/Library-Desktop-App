@@ -70,8 +70,8 @@ namespace Library.Migrations
                         name: "FK_Accounts_Libraries_libraryID",
                         column: x => x.libraryID,
                         principalTable: "Libraries",
-                        principalColumn: "Library_ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Library_ID"
+                       );
                 });
 
             migrationBuilder.CreateTable(
@@ -90,8 +90,8 @@ namespace Library.Migrations
                         name: "FK_Catalogs_Libraries_libraryID",
                         column: x => x.libraryID,
                         principalTable: "Libraries",
-                        principalColumn: "Library_ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Library_ID"
+                        );
                 });
 
             migrationBuilder.CreateTable(
@@ -111,8 +111,8 @@ namespace Library.Migrations
                         name: "FK_Patrons_Accounts_Accountnumber",
                         column: x => x.Accountnumber,
                         principalTable: "Accounts",
-                        principalColumn: "Account_number",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Account_number"
+                        );
                 });
 
             migrationBuilder.CreateTable(
@@ -134,8 +134,7 @@ namespace Library.Migrations
                     CatalogID = table.Column<int>(nullable: true),
                     libraryID = table.Column<int>(nullable: true),
                     AccountID = table.Column<int>(nullable: true),
-                    librarian_ID = table.Column<int>(nullable: true),
-                    Librarian_ID = table.Column<int>(nullable: true)
+                    librarianID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -144,26 +143,26 @@ namespace Library.Migrations
                         name: "FK_Books_Accounts_AccountID",
                         column: x => x.AccountID,
                         principalTable: "Accounts",
-                        principalColumn: "Account_number",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Account_number"
+                       );
                     table.ForeignKey(
                         name: "FK_Books_Catalogs_CatalogID",
                         column: x => x.CatalogID,
                         principalTable: "Catalogs",
-                        principalColumn: "CatalogID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "CatalogID"
+                        );
                     table.ForeignKey(
-                        name: "FK_Books_Librarians_Librarian_ID",
-                        column: x => x.Librarian_ID,
+                        name: "FK_Books_Librarians_librarianID",
+                        column: x => x.librarianID,
                         principalTable: "Librarians",
-                        principalColumn: "Librarian_ID",
-                        onDelete: ReferentialAction.Restrict);
+                        principalColumn: "Librarian_ID"
+                        );
                     table.ForeignKey(
                         name: "FK_Books_Libraries_libraryID",
                         column: x => x.libraryID,
                         principalTable: "Libraries",
-                        principalColumn: "Library_ID",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Library_ID"
+                        );
                 });
 
             migrationBuilder.CreateTable(
@@ -211,9 +210,9 @@ namespace Library.Migrations
                 column: "CatalogID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Books_Librarian_ID",
+                name: "IX_Books_librarianID",
                 table: "Books",
-                column: "Librarian_ID");
+                column: "librarianID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_libraryID",
