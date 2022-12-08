@@ -44,6 +44,9 @@ namespace Library.Migrations
 
                     b.HasIndex("libraryID");
 
+                    b.HasIndex("patronID")
+                        .IsUnique();
+
                     b.ToTable("Accounts");
                 });
 
@@ -188,9 +191,6 @@ namespace Library.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Accountnumber")
-                        .HasColumnType("int");
-
                     b.Property<string>("Address")
                         .HasColumnType("nvarchar(max)");
 
@@ -198,9 +198,6 @@ namespace Library.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Patron_ID");
-
-                    b.HasIndex("Accountnumber")
-                        .IsUnique();
 
                     b.ToTable("Patrons");
                 });
@@ -248,6 +245,12 @@ namespace Library.Migrations
                         .HasForeignKey("libraryID")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Library.Classes.Patron", "Patron")
+                        .WithOne("Account")
+                        .HasForeignKey("Library.Classes.Account", "patronID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Library.Classes.BookAuthor", b =>
@@ -270,15 +273,6 @@ namespace Library.Migrations
                     b.HasOne("Library.Classes.Basic_Classes.Library_Class", "library")
                         .WithMany("Catalogs")
                         .HasForeignKey("libraryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Library.Classes.Patron", b =>
-                {
-                    b.HasOne("Library.Classes.Account", "Account")
-                        .WithOne("Patron")
-                        .HasForeignKey("Library.Classes.Patron", "Accountnumber")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

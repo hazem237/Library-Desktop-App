@@ -35,10 +35,10 @@ namespace Library.Classes
                 .WithMany(c => c.BookAuthors)
                 .HasForeignKey(bc => bc.Author_Id);
 
-            modelBuilder.Entity<Account>()
+            /*modelBuilder.Entity<Account>()
             .HasOne(a => a.Patron)
             .WithOne(a => a.Account)
-            .HasForeignKey<Patron>(c => c.Accountnumber);
+            .HasForeignKey<Patron>(c => c.Accountnumber);*/
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
