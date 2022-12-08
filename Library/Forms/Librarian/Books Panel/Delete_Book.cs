@@ -22,6 +22,11 @@ namespace Library.Forms.Librarian.Books_Panel
         {
             Classes.LibraryContext ctx = new Classes.LibraryContext();
             var b = ctx.BookItems.Where(x => x.ISBN == Convert.ToInt32(textBox1.Text)).Single();
+            var b2 = ctx.BookAuthors.Where(x => x.ISBN == Convert.ToInt32(textBox1.Text)).ToList();
+            foreach (var t in b2)
+            {
+                ctx.BookAuthors.Remove(t);
+            }
             ctx.BookItems.Remove(b);
             ctx.SaveChanges();
 
