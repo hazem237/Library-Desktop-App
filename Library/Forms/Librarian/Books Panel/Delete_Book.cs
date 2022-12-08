@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Library.Classes.Operation_Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,15 @@ namespace Library.Forms.Librarian.Books_Panel
         public Delete_Book()
         {
             InitializeComponent();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Classes.LibraryContext ctx = new Classes.LibraryContext();
+            var b = ctx.BookItems.Where(x => x.ISBN == Convert.ToInt32(textBox1.Text)).Single();
+            ctx.BookItems.Remove(b);
+            ctx.SaveChanges();
+
         }
     }
 }
