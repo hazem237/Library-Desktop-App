@@ -48,5 +48,10 @@ namespace Library.Forms.Admin
         {
 
         }
+
+        private void Add_Catalog_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

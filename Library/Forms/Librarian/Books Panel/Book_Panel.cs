@@ -32,7 +32,8 @@ namespace Library.Forms.Librarian
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Add_Book a = new Add_Book();
+            a.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)

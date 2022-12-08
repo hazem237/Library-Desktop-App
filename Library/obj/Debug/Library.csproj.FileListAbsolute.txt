@@ -300,3 +300,4 @@ C:\Users\yas se\Desktop\t3\Library-Desktop-App\Library\obj\Debug\Library.csproj.
 C:\Users\yas se\Desktop\t3\Library-Desktop-App\Library\obj\Debug\Library.csproj.CopyComplete
 C:\Users\yas se\Desktop\t3\Library-Desktop-App\Library\obj\Debug\Library.exe
 C:\Users\yas se\Desktop\t3\Library-Desktop-App\Library\obj\Debug\Library.pdb
+C:\Users\yas se\Desktop\t3\Library-Desktop-App\Library\obj\Debug\Library.Forms.Librarian.Books_Panel.Add_Book.resources
