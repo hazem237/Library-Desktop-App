@@ -23,5 +23,28 @@ namespace Library.Forms.Librarian
             Add_Author a = new Add_Author();
             a.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Delete_Book d = new Delete_Book();
+            d.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Filter_Book f = new Filter_Book();
+            f.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Modify_Book m = new Modify_Book();
+            m.ShowDialog();
+        }
     }
 }
