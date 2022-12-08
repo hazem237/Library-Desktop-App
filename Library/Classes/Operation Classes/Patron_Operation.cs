@@ -11,7 +11,8 @@ namespace Library.Classes.Operation_Classes
         LibraryContext Patron_ctx = new LibraryContext();
         public void Add_Patron(Patron p)
         {
-            //Patron_ctx.patrons.add(p);
+            Patron_ctx.Patrons.Add(p);
+            Patron_ctx.SaveChanges();
         }
     }
 }
