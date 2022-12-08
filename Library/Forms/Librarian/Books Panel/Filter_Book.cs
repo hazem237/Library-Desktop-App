@@ -66,5 +66,29 @@ namespace Library.Forms.Librarian.Books_Panel
             }
             richTextBox3.Text = a;
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var b = ctx.BookItems.Min(x => x.Number_of_pages);
+            var b2 = ctx.BookItems.First(x => x.Number_of_pages == b);
+            richTextBox4.Text = b2.Title;
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            //var a = ctx.BookItems.Last();
+           // richTextBox6.Text = a.Title;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            var Books = ctx.BookAuthors.Where(x => x.ISBN == Convert.ToInt32(textBox2.Text)).ToList();
+            string s = "";
+            foreach (var a in Books)
+            {
+                s = s + ctx.Authors.Where(x => x.Author_ID == a.Author_Id).Single().Authour_Name + '\n';
+            }
+            richTextBox5.Text = s;
+        }
     }
 }

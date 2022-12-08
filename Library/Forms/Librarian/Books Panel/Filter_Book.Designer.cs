@@ -45,8 +45,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.richTextBox5 = new System.Windows.Forms.RichTextBox();
@@ -170,6 +168,7 @@
             this.button4.TabIndex = 12;
             this.button4.Text = "Get Authors ";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // label5
             // 
@@ -198,6 +197,7 @@
             this.button5.TabIndex = 14;
             this.button5.Text = "Minimum Number Of Pages";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // richTextBox4
             // 
@@ -206,23 +206,6 @@
             this.richTextBox4.Size = new System.Drawing.Size(210, 29);
             this.richTextBox4.TabIndex = 15;
             this.richTextBox4.Text = "";
-            // 
-            // button7
-            // 
-            this.button7.Location = new System.Drawing.Point(337, 288);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(170, 28);
-            this.button7.TabIndex = 18;
-            this.button7.Text = "Last Added Book";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
-            // richTextBox6
-            // 
-            this.richTextBox6.Location = new System.Drawing.Point(524, 288);
-            this.richTextBox6.Name = "richTextBox6";
-            this.richTextBox6.Size = new System.Drawing.Size(210, 29);
-            this.richTextBox6.TabIndex = 19;
-            this.richTextBox6.Text = "";
             // 
             // textBox2
             // 
@@ -266,8 +249,6 @@
             this.Controls.Add(this.richTextBox5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.richTextBox6);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.panel2);
@@ -312,8 +293,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.RichTextBox richTextBox6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RichTextBox richTextBox5;
