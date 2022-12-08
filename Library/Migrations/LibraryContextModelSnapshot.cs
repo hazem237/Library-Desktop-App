@@ -32,21 +32,18 @@ namespace Library.Migrations
                     b.Property<string>("History")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Library_ID")
-                        .HasColumnType("int");
-
                     b.Property<int>("account_State")
                         .HasColumnType("int");
 
-                    b.Property<int>("library_ID")
+                    b.Property<int>("libraryID")
                         .HasColumnType("int");
 
-                    b.Property<int>("patron_ID")
+                    b.Property<int>("patronID")
                         .HasColumnType("int");
 
                     b.HasKey("Account_number");
 
-                    b.HasIndex("Library_ID");
+                    b.HasIndex("libraryID");
 
                     b.ToTable("Accounts");
                 });
@@ -148,15 +145,12 @@ namespace Library.Migrations
                     b.Property<string>("Catalog_Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("Library_ID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("library_ID")
+                    b.Property<int>("libraryID")
                         .HasColumnType("int");
 
                     b.HasKey("CatalogID");
 
-                    b.HasIndex("Library_ID");
+                    b.HasIndex("libraryID");
 
                     b.ToTable("Catalogs");
                 });
@@ -195,7 +189,7 @@ namespace Library.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Account_number")
+                    b.Property<int>("Accountnumber")
                         .HasColumnType("int");
 
                     b.Property<string>("Address")
@@ -206,7 +200,7 @@ namespace Library.Migrations
 
                     b.HasKey("Patron_ID");
 
-                    b.HasIndex("Account_number")
+                    b.HasIndex("Accountnumber")
                         .IsUnique();
 
                     b.ToTable("Patrons");
@@ -216,19 +210,13 @@ namespace Library.Migrations
                 {
                     b.HasBaseType("Library.Classes.Book");
 
-                    b.Property<int>("Account_ID")
-                        .HasColumnType("int");
-
-                    b.Property<int?>("Account_number")
+                    b.Property<int>("AccountID")
                         .HasColumnType("int");
 
                     b.Property<string>("BarCode")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("CatalogID")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Catalog_ID")
+                    b.Property<int>("CatalogID")
                         .HasColumnType("int");
 
                     b.Property<bool>("IsReferenceOnly")
@@ -237,25 +225,22 @@ namespace Library.Migrations
                     b.Property<int?>("Librarian_ID")
                         .HasColumnType("int");
 
-                    b.Property<int?>("Library_ID")
-                        .HasColumnType("int");
-
                     b.Property<int>("Tag")
                         .HasColumnType("int");
 
                     b.Property<int>("librarian_ID")
                         .HasColumnType("int");
 
-                    b.Property<int>("library_ID")
+                    b.Property<int>("libraryID")
                         .HasColumnType("int");
 
-                    b.HasIndex("Account_number");
+                    b.HasIndex("AccountID");
 
                     b.HasIndex("CatalogID");
 
                     b.HasIndex("Librarian_ID");
 
-                    b.HasIndex("Library_ID");
+                    b.HasIndex("libraryID");
 
                     b.HasDiscriminator().HasValue("Book_Item");
                 });
@@ -264,7 +249,9 @@ namespace Library.Migrations
                 {
                     b.HasOne("Library.Classes.Basic_Classes.Library_Class", "Library")
                         .WithMany("Accounts")
-                        .HasForeignKey("Library_ID");
+                        .HasForeignKey("libraryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Library.Classes.BookAuthor", b =>
@@ -286,14 +273,16 @@ namespace Library.Migrations
                 {
                     b.HasOne("Library.Classes.Basic_Classes.Library_Class", "library")
                         .WithMany("Catalogs")
-                        .HasForeignKey("Library_ID");
+                        .HasForeignKey("libraryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Library.Classes.Patron", b =>
                 {
                     b.HasOne("Library.Classes.Account", "Account")
                         .WithOne("Patron")
-                        .HasForeignKey("Library.Classes.Patron", "Account_number")
+                        .HasForeignKey("Library.Classes.Patron", "Accountnumber")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -302,11 +291,15 @@ namespace Library.Migrations
                 {
                     b.HasOne("Library.Classes.Account", "Account")
                         .WithMany("Book_Items")
-                        .HasForeignKey("Account_number");
+                        .HasForeignKey("AccountID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Library.Classes.Catalog", "Catalog")
                         .WithMany("Book_Items")
-                        .HasForeignKey("CatalogID");
+                        .HasForeignKey("CatalogID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("Library.Classes.Librarian", "Librarian")
                         .WithMany("Book_Items")
@@ -314,7 +307,9 @@ namespace Library.Migrations
 
                     b.HasOne("Library.Classes.Basic_Classes.Library_Class", "Library")
                         .WithMany("Book_Items")
-                        .HasForeignKey("Library_ID");
+                        .HasForeignKey("libraryID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

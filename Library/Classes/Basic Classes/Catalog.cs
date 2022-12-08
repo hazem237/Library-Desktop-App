@@ -12,7 +12,8 @@ namespace Library.Classes
         public int  CatalogID { get; set; }
         public string Catalog_Name { get; set; }
         public List <Book_Item> Book_Items { get; set; }
-        public int library_ID { get; set; }
+        
+        public int libraryID { get; set; }
         public Library_Class library { get; set; }
     }
 }

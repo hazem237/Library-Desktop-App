@@ -18,7 +18,7 @@ namespace Library.Classes
         public string Address { get; set; }
 
         [ForeignKey("Account_number")]
-        public int Account_number { get; set; }
+        public int Accountnumber { get; set; }
         public  Account Account { get; set; }
     }
 }

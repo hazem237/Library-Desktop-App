@@ -59,20 +59,19 @@ namespace Library.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     History = table.Column<string>(nullable: true),
                     Date_opened = table.Column<string>(nullable: true),
-                    //library_ID = table.Column<int>(nullable: false),
-                    Library_ID = table.Column<int>(nullable: false),
-                    patron_ID = table.Column<int>(nullable: false),
+                    libraryID = table.Column<int>(nullable: false),
+                    patronID = table.Column<int>(nullable: false),
                     account_State = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Accounts", x => x.Account_number);
                     table.ForeignKey(
-                        name: "FK_Accounts_Libraries_Library_ID",
-                        column: x => x.Library_ID,
+                        name: "FK_Accounts_Libraries_libraryID",
+                        column: x => x.libraryID,
                         principalTable: "Libraries",
                         principalColumn: "Library_ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -82,18 +81,17 @@ namespace Library.Migrations
                     CatalogID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Catalog_Name = table.Column<string>(nullable: true),
-                   // library_ID = table.Column<int>(nullable: false),
-                    Library_ID = table.Column<int>(nullable: false)
+                    libraryID = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Catalogs", x => x.CatalogID);
                     table.ForeignKey(
-                        name: "FK_Catalogs_Libraries_Library_ID",
-                        column: x => x.Library_ID,
+                        name: "FK_Catalogs_Libraries_libraryID",
+                        column: x => x.libraryID,
                         principalTable: "Libraries",
                         principalColumn: "Library_ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -104,14 +102,14 @@ namespace Library.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
-                    Account_number = table.Column<int>(nullable: false)
+                    Accountnumber = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Patrons", x => x.Patron_ID);
                     table.ForeignKey(
-                        name: "FK_Patrons_Accounts_Account_number",
-                        column: x => x.Account_number,
+                        name: "FK_Patrons_Accounts_Accountnumber",
+                        column: x => x.Accountnumber,
                         principalTable: "Accounts",
                         principalColumn: "Account_number",
                         onDelete: ReferentialAction.Cascade);
@@ -133,30 +131,27 @@ namespace Library.Migrations
                     BarCode = table.Column<string>(nullable: true),
                     Tag = table.Column<int>(nullable: true),
                     IsReferenceOnly = table.Column<bool>(nullable: true),
-                   // Catalog_ID = table.Column<int>(nullable: true),
                     CatalogID = table.Column<int>(nullable: true),
-                   // library_ID = table.Column<int>(nullable: true),
-                    Library_ID = table.Column<int>(nullable: true),
-                   // Account_ID = table.Column<int>(nullable: true),
-                    Account_number = table.Column<int>(nullable: true),
-                   // librarian_ID = table.Column<int>(nullable: true),
+                    libraryID = table.Column<int>(nullable: true),
+                    AccountID = table.Column<int>(nullable: true),
+                    librarian_ID = table.Column<int>(nullable: true),
                     Librarian_ID = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Books", x => x.ISBN);
                     table.ForeignKey(
-                        name: "FK_Books_Accounts_Account_number",
-                        column: x => x.Account_number,
+                        name: "FK_Books_Accounts_AccountID",
+                        column: x => x.AccountID,
                         principalTable: "Accounts",
                         principalColumn: "Account_number",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Books_Catalogs_CatalogID",
                         column: x => x.CatalogID,
                         principalTable: "Catalogs",
                         principalColumn: "CatalogID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Books_Librarians_Librarian_ID",
                         column: x => x.Librarian_ID,
@@ -164,11 +159,11 @@ namespace Library.Migrations
                         principalColumn: "Librarian_ID",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Books_Libraries_Library_ID",
-                        column: x => x.Library_ID,
+                        name: "FK_Books_Libraries_libraryID",
+                        column: x => x.libraryID,
                         principalTable: "Libraries",
                         principalColumn: "Library_ID",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -196,9 +191,9 @@ namespace Library.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Accounts_Library_ID",
+                name: "IX_Accounts_libraryID",
                 table: "Accounts",
-                column: "Library_ID");
+                column: "libraryID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BookAuthors_Author_Id",
@@ -206,9 +201,9 @@ namespace Library.Migrations
                 column: "Author_Id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Books_Account_number",
+                name: "IX_Books_AccountID",
                 table: "Books",
-                column: "Account_number");
+                column: "AccountID");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Books_CatalogID",
@@ -221,19 +216,19 @@ namespace Library.Migrations
                 column: "Librarian_ID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Books_Library_ID",
+                name: "IX_Books_libraryID",
                 table: "Books",
-                column: "Library_ID");
+                column: "libraryID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Catalogs_Library_ID",
+                name: "IX_Catalogs_libraryID",
                 table: "Catalogs",
-                column: "Library_ID");
+                column: "libraryID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Patrons_Account_number",
+                name: "IX_Patrons_Accountnumber",
                 table: "Patrons",
-                column: "Account_number",
+                column: "Accountnumber",
                 unique: true);
         }
 

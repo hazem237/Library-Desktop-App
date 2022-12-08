@@ -21,7 +21,7 @@ namespace Library.Forms.Admin
             InitializeComponent();
             foreach (Library_Class a in ctx.Libraries)
             {
-                comboBox1.Items.Add(a.Name);
+                comboBox1.Items.Add(a.Library_ID);
             }
         }
 
@@ -29,11 +29,17 @@ namespace Library.Forms.Admin
         {
             Catalog c = new Catalog();
             c.Catalog_Name = textBox1.Text;
-            string key = comboBox1.SelectedItem.ToString();
-            int a = ctx.Libraries.Where(x => x.Name == key).Single().Library_ID;
-          
-            Catalogs_Operation c2 = new Catalogs_Operation();
-            c2.Add_Catalog(c);
+            int key = Convert.ToInt32(comboBox1.SelectedItem);
+           // var a = ctx.Libraries.Where(x => x.Name == key).Single();
+           // c.library = a;
+           // c.library_ID = key;
+
+
+            ctx.Catalogs.Add(c);
+            ctx.SaveChanges();
+
+            //Catalogs_Operation c2 = new Catalogs_Operation();
+           // c2.Add_Catalog(c);
 
         }
 

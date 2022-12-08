@@ -17,10 +17,10 @@ namespace Library.Classes
         public string Date_opened { get; set; }
        // public AccountState state { get; set;}
 
-        public int library_ID { get; set; }
+        public int libraryID { get; set; }
         public Library_Class Library { get; set; }
 
-        public int patron_ID { get; set; }
+        public int patronID { get; set; }
         public Patron Patron { get; set; }
 
         public List<Book_Item> Book_Items { get; set; }

@@ -38,7 +38,7 @@ namespace Library.Classes
             modelBuilder.Entity<Account>()
             .HasOne(a => a.Patron)
             .WithOne(a => a.Account)
-            .HasForeignKey<Patron>(c => c.Account_number);
+            .HasForeignKey<Patron>(c => c.Accountnumber);
 
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
