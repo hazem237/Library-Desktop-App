@@ -421,6 +421,7 @@
             this.button7.TabIndex = 41;
             this.button7.Text = "Show All Borrowed Book";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -430,6 +431,7 @@
             this.button8.TabIndex = 42;
             this.button8.Text = "Show All Reseved Book";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // richTextBox8
             // 

@@ -160,5 +160,27 @@ namespace Library.Forms.Librarian.Patron_Panel
         {
 
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string a = "";
+            var b = ctx.BookItems.Where(x => x.AccountID != null).ToList();
+            foreach (var b2 in b)
+            {
+                a = a + b2.Title + " , ISBN : " + b2.ISBN + '\n';
+            }
+            richTextBox6.Text = a;
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            string a = "";
+            var b = ctx.BookItems.Where(x => x.AccountID ==null).ToList();
+            foreach (var b2 in b)
+            {
+                a = a + b2.Title + " , ISBN : " + b2.ISBN + '\n';
+            }
+            richTextBox7.Text = a;
+        }
     }
 }
