@@ -131,5 +131,34 @@ namespace Library.Forms.Librarian.Patron_Panel
             richTextBox3.Text = s;
 
         }
+
+        private void richTextBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            var book = ctx.BookItems.Where(b => b.ISBN == Convert.ToInt32(textBox6.Text)).SingleOrDefault();
+            var account = ctx.Accounts.Where(a => a.Account_number == book.AccountID).SingleOrDefault();
+            var patron = ctx.Patrons.Where(p => p.Patron_ID == account.patronID).SingleOrDefault();
+            if (book.AccountID !=null)
+            {
+               
+                richTextBox5.Text = "The Book Reserved By Patron : " + patron.Name;
+                richTextBox8.Text = "Book Name : " + book.Title;
+                book.AccountID = null;
+                ctx.SaveChanges();
+            }
+            else
+            {
+                richTextBox5.Text = "The Book is Un-Borrowerd ";
+            }
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -46,7 +46,7 @@ namespace Library.Forms.Librarian.Books_Panel
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var b = ctx.BookItems.Where(x => x.Title == comboBox1.SelectedItem).Single();
+            var b = ctx.BookItems.Where(x => x.Title == comboBox1.SelectedItem).SingleOrDefault();
             if (radioButton1.Checked)
             {
                 b.Title = textBox1.Text;

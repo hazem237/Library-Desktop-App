@@ -56,6 +56,21 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.richTextBox5 = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.button6 = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.richTextBox6 = new System.Windows.Forms.RichTextBox();
+            this.richTextBox7 = new System.Windows.Forms.RichTextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.richTextBox8 = new System.Windows.Forms.RichTextBox();
+            this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -135,6 +150,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.panel5);
             this.panel1.Location = new System.Drawing.Point(366, 19);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(10, 425);
@@ -310,11 +326,135 @@
             this.richTextBox4.TabIndex = 33;
             this.richTextBox4.Text = "";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.LightGray;
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Location = new System.Drawing.Point(12, 463);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1065, 13);
+            this.panel4.TabIndex = 9;
+            // 
+            // richTextBox5
+            // 
+            this.richTextBox5.Location = new System.Drawing.Point(32, 626);
+            this.richTextBox5.Name = "richTextBox5";
+            this.richTextBox5.Size = new System.Drawing.Size(259, 28);
+            this.richTextBox5.TabIndex = 34;
+            this.richTextBox5.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(29, 594);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 13);
+            this.label4.TabIndex = 35;
+            this.label4.Text = "Book ISBN";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(87, 591);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(204, 20);
+            this.textBox6.TabIndex = 36;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(32, 700);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(259, 23);
+            this.button6.TabIndex = 37;
+            this.button6.Text = "Reseve Book";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.LightGray;
+            this.panel5.Location = new System.Drawing.Point(0, 431);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(10, 425);
+            this.panel5.TabIndex = 9;
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.LightGray;
+            this.panel6.Location = new System.Drawing.Point(354, 19);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(10, 425);
+            this.panel6.TabIndex = 38;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Tahoma", 15F);
+            this.label5.Location = new System.Drawing.Point(83, 537);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(124, 24);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Reseve Book";
+            // 
+            // richTextBox6
+            // 
+            this.richTextBox6.Location = new System.Drawing.Point(556, 574);
+            this.richTextBox6.Name = "richTextBox6";
+            this.richTextBox6.Size = new System.Drawing.Size(237, 186);
+            this.richTextBox6.TabIndex = 39;
+            this.richTextBox6.Text = "";
+            this.richTextBox6.TextChanged += new System.EventHandler(this.richTextBox6_TextChanged);
+            // 
+            // richTextBox7
+            // 
+            this.richTextBox7.Location = new System.Drawing.Point(818, 574);
+            this.richTextBox7.Name = "richTextBox7";
+            this.richTextBox7.Size = new System.Drawing.Size(237, 186);
+            this.richTextBox7.TabIndex = 40;
+            this.richTextBox7.Text = "";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(556, 546);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(238, 22);
+            this.button7.TabIndex = 41;
+            this.button7.Text = "Show All Borrowed Book";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(818, 546);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(238, 22);
+            this.button8.TabIndex = 42;
+            this.button8.Text = "Show All Reseved Book";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // richTextBox8
+            // 
+            this.richTextBox8.Location = new System.Drawing.Point(32, 660);
+            this.richTextBox8.Name = "richTextBox8";
+            this.richTextBox8.Size = new System.Drawing.Size(259, 28);
+            this.richTextBox8.TabIndex = 43;
+            this.richTextBox8.Text = "";
+            // 
             // Patron_panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1119, 459);
+            this.ClientSize = new System.Drawing.Size(1119, 790);
+            this.Controls.Add(this.richTextBox8);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.richTextBox7);
+            this.Controls.Add(this.richTextBox6);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.button6);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.richTextBox5);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox3);
@@ -346,6 +486,8 @@
             this.Name = "Patron_panel";
             this.Text = "Patron_panel";
             this.Load += new System.EventHandler(this.Patron_panel_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -381,5 +523,18 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.RichTextBox richTextBox5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.RichTextBox richTextBox6;
+        private System.Windows.Forms.RichTextBox richTextBox7;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.RichTextBox richTextBox8;
     }
 }
