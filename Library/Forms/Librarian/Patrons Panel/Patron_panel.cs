@@ -59,9 +59,23 @@ namespace Library.Forms.Librarian.Patron_Panel
             string a = "";
             foreach (Classes.Patron a2 in patrons)
             {
-                a = a + a2.Name + '\n';
+                a = a + "Name : " +
+                    a2.Name + " " +
+                    "ID : " +
+                    a2.Patron_ID + '\n';
             }
             richTextBox1.Text = a;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var frozen = ctx.Accounts.Where(x => x.account_State == 0).ToList();
+            string a = "";
+            foreach (var a2 in frozen)
+            {
+                a = a + ctx.Patrons.Where(p => p.Patron_ID == a2.patronID).Single().Name + '\n';
+            }
+            richTextBox2.Text=a;
         }
     }
 }
