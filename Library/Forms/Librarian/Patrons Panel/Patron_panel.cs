@@ -35,7 +35,31 @@ namespace Library.Forms.Librarian.Patron_Panel
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            var a = ctx.Accounts.Where(x => x.patronID == Convert.ToInt32(textBox1.Text)).Single();
+            if (radioButton1.Checked)
+            {
+                a.History = textBox2.Text;
+            }
+            else if (radioButton2.Checked)
+            {
+                a.Date_opened = textBox2.Text;
+            }
+            else
+            {
+                switch (textBox2.Text)
+                {
+                    case "Frozen":
+                        a.account_State = (Classes.Basic_Classes.Account_State)0;
+                        break;
+                    case "Active":
+                        a.account_State = (Classes.Basic_Classes.Account_State)1;
+                        break;
+                    case "Closed":
+                        a.account_State = (Classes.Basic_Classes.Account_State)2;
+                        break;
+                }
+            }
+            ctx.SaveChanges();
         }
 
         private void label4_Click(object sender, EventArgs e)
