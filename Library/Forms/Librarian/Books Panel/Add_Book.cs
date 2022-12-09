@@ -74,7 +74,7 @@ namespace Library.Forms.Librarian.Books_Panel
             }
             book.CatalogID = ctx.Catalogs.Where(x => x.Catalog_Name == comboBox1.SelectedItem.ToString()).Single().CatalogID;
             book.libraryID = ctx.Libraries.Where(x => x.Name == comboBox2.SelectedItem.ToString()).Single().Library_ID;
-            book.AccountID = ctx.Accounts.Where(x => x.Account_number == Convert.ToInt32(comboBox3.SelectedItem.ToString())).Single().Account_number;
+            book.AccountID = null;
             book.librarianID = ctx.Librarians.Where(x => x.Name == comboBox4.SelectedItem.ToString()).Single().Librarian_ID;
             book.BookAuthors = AuthorsList;
 
