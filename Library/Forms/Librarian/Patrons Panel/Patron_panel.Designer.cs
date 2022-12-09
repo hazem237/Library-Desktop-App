@@ -55,6 +55,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // richTextBox1
@@ -197,11 +198,11 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(932, 85);
+            this.label9.Location = new System.Drawing.Point(907, 85);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 13);
+            this.label9.Size = new System.Drawing.Size(86, 13);
             this.label9.TabIndex = 21;
-            this.label9.Text = "Patron ID";
+            this.label9.Text = "Account Number";
             // 
             // textBox4
             // 
@@ -228,12 +229,13 @@
             this.button5.TabIndex = 24;
             this.button5.Text = "Get Books";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // richTextBox3
             // 
-            this.richTextBox3.Location = new System.Drawing.Point(851, 169);
+            this.richTextBox3.Location = new System.Drawing.Point(851, 203);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(204, 272);
+            this.richTextBox3.Size = new System.Drawing.Size(204, 213);
             this.richTextBox3.TabIndex = 25;
             this.richTextBox3.Text = "";
             // 
@@ -300,11 +302,20 @@
             this.textBox5.Size = new System.Drawing.Size(204, 20);
             this.textBox5.TabIndex = 32;
             // 
+            // richTextBox4
+            // 
+            this.richTextBox4.Location = new System.Drawing.Point(851, 169);
+            this.richTextBox4.Name = "richTextBox4";
+            this.richTextBox4.Size = new System.Drawing.Size(204, 28);
+            this.richTextBox4.TabIndex = 33;
+            this.richTextBox4.Text = "";
+            // 
             // Patron_panel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1119, 459);
+            this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label3);
@@ -369,5 +380,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.RichTextBox richTextBox4;
     }
 }

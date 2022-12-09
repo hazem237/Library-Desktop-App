@@ -115,5 +115,21 @@ namespace Library.Forms.Librarian.Patron_Panel
             book.AccountID = acount.Account_number;
             ctx.SaveChanges();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            var acount = ctx.Accounts.Where(a => a.Account_number == Convert.ToInt32(textBox4.
+                Text)).SingleOrDefault();
+            var patron = ctx.Patrons.Where(p => p.Patron_ID == acount.patronID).Single();
+            richTextBox4.Text = "Patron Name : " + patron.Name;
+            var Books = ctx.BookItems.Where(b => b.AccountID == acount.Account_number).ToList();
+            string s = "";
+            foreach (var b in Books)
+            {
+                s = s + b.Title + '\n';
+            }
+            richTextBox3.Text = s;
+
+        }
     }
 }
