@@ -12,6 +12,7 @@ namespace Library.Forms.Librarian.Patron_Panel
 {
     public partial class Patron_panel : Form
     {
+        Classes.LibraryContext ctx = new Classes.LibraryContext();
         public Patron_panel()
         {
             InitializeComponent();
@@ -50,6 +51,17 @@ namespace Library.Forms.Librarian.Patron_Panel
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var patrons = ctx.Patrons.ToList();
+            string a = "";
+            foreach (Classes.Patron a2 in patrons)
+            {
+                a = a + a2.Name + '\n';
+            }
+            richTextBox1.Text = a;
         }
     }
 }
