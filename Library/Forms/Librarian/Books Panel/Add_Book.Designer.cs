@@ -54,8 +54,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
@@ -289,27 +287,10 @@
             this.label12.TabIndex = 32;
             this.label12.Text = "Library";
             // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(376, 349);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(169, 21);
-            this.comboBox3.TabIndex = 33;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(316, 349);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(46, 13);
-            this.label13.TabIndex = 34;
-            this.label13.Text = "Account";
-            // 
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(374, 387);
+            this.comboBox4.Location = new System.Drawing.Point(374, 361);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(169, 21);
             this.comboBox4.TabIndex = 35;
@@ -317,7 +298,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(322, 390);
+            this.label14.Location = new System.Drawing.Point(320, 361);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(48, 13);
             this.label14.TabIndex = 36;
@@ -360,8 +341,6 @@
             this.Controls.Add(this.comboBox5);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label11);
@@ -424,8 +403,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox comboBox5;

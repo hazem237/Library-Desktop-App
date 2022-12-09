@@ -101,5 +101,19 @@ namespace Library.Forms.Librarian.Patron_Panel
             }
             richTextBox2.Text=a;
         }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            //var patron = ctx.Patrons.Where(x => x.Patron_ID == Convert.ToInt32(textBox3.Text)).SingleOrDefault();
+            var acount = ctx.Accounts.Where(a => a.Account_number == Convert.ToInt32(textBox3.Text)).SingleOrDefault();
+            var book = ctx.BookItems.Where(b => b.ISBN == Convert.ToInt32(textBox5.Text)).SingleOrDefault();
+            book.AccountID = acount.Account_number;
+            ctx.SaveChanges();
+        }
     }
 }

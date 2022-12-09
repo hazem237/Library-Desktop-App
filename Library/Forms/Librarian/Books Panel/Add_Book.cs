@@ -29,10 +29,7 @@ namespace Library.Forms.Librarian.Books_Panel
             {
                 comboBox2.Items.Add(l.Name);
             }
-            foreach (Account a in ctx.Accounts)
-            {
-                comboBox3.Items.Add(a.Account_number);
-            }
+           
             foreach (Classes.Librarian l in ctx.Librarians)
             {
                 comboBox4.Items.Add(l.Name);
